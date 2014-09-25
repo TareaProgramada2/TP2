@@ -11,7 +11,7 @@ import org.jfree.data.xy.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import gráficos.JavaEmail;
+import gráficos.Email;
 import javax.mail.MessagingException;
 
 import org.jfree.chart.plot.CategoryPlot;

@@ -1,4 +1,3 @@
-
 package gráficos;
 
 import java.util.Locale;
@@ -12,30 +11,30 @@ import org.jfree.data.xy.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
+import gráficos.JavaEmail;
+import javax.mail.MessagingException;
 
 import org.jfree.chart.plot.CategoryPlot;
 
 import org.jfree.data.general.DefaultPieDataset;
 
-
-
-
-
-
-
 public class Graficoss extends javax.swing.JFrame {
 
-    
+    Email email = new Email();
+
     public Graficoss() {
         initComponents();
         this.setLocationRelativeTo(this);//Ubica el panel
         this.Pastel.setVisible(false);//Hace visible el panel donde estará el grafico pastel
         this.Barras.setVisible(false);//Hace visible el panel donde estará el grafico de barras
-        
+
         this.setVisible(true);
     }
 
-    
+    public void correo() throws MessagingException {
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -190,131 +189,117 @@ public class Graficoss extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        
+
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void OpcionPastelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionPastelActionPerformed
-       
+
     }//GEN-LAST:event_OpcionPastelActionPerformed
 
     private void BotonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGraficarActionPerformed
         ChartPanel panel;
-        JFreeChart chart=null;
-        
-        
-        if (OpciondeBarras.isSelected()){
+        JFreeChart chart = null;
+
+        if (OpciondeBarras.isSelected()) {
             //GRAFICO DE BARRAS
-            DefaultCategoryDataset data=new DefaultCategoryDataset();
-            
-            
+            DefaultCategoryDataset data = new DefaultCategoryDataset();
+
             String producto1 = "Persona con discapacidad";
-            String producto2="Adulto mayor";
-            String producto3="Mujer embarazada";
-            String producto4="Cliente corporativo";
-            String producto5="Cliente regular";
-                   
-            
-            String dia1="Tipo";
-            
-            
+            String producto2 = "Adulto mayor";
+            String producto3 = "Mujer embarazada";
+            String producto4 = "Cliente corporativo";
+            String producto5 = "Cliente regular";
+
+            String dia1 = "Tipo";
+
             data.addValue(18, producto1, dia1);
             data.addValue(10, producto1, dia1);
             data.addValue(6, producto1, dia1);
             data.addValue(1, producto1, dia1);
-            
+
             data.addValue(7, producto2, dia1);
             data.addValue(8, producto2, dia1);
             data.addValue(18, producto2, dia1);
             data.addValue(2, producto2, dia1);
-            
+
             data.addValue(2, producto3, dia1);
             data.addValue(8, producto3, dia1);
             data.addValue(1, producto3, dia1);
             data.addValue(5, producto3, dia1);
-            
+
             data.addValue(7, producto4, dia1);
             data.addValue(8, producto4, dia1);
             data.addValue(18, producto4, dia1);
             data.addValue(2, producto4, dia1);
-            
+
             data.addValue(7, producto5, dia1);
             data.addValue(3, producto5, dia1);
             data.addValue(8, producto5, dia1);
             data.addValue(12, producto5, dia1);
-            
-            chart=ChartFactory.createBarChart("Gráfico de barras", "Tipo", "Cantidad", data, PlotOrientation.HORIZONTAL, true, true, true);
+
+            chart = ChartFactory.createBarChart("Gráfico de barras", "Tipo", "Cantidad", data, PlotOrientation.HORIZONTAL, true, true, true);
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
             plot.setDomainGridlinesVisible(false);
-            
-                          
 
-          
-                    
-        }else{
-            if (OpciondePastel.isSelected()){
-                    //GRAFICO DE PASTEL  
+        } else {
+            if (OpciondePastel.isSelected()) {
+                //GRAFICO DE PASTEL  
 
-                DefaultPieDataset data =new DefaultPieDataset();
+                DefaultPieDataset data = new DefaultPieDataset();
                 data.setValue("Persona con discapacidad", 30);
                 data.setValue("Adulto mayor", 10);
                 data.setValue("Mujer embarazada", 20);
-                data.setValue("Cliente corporativo",15 );
+                data.setValue("Cliente corporativo", 15);
                 data.setValue("Cliente regular", 25);
 
                 chart = ChartFactory.createPieChart3D("Grafico", data, true, true, false);
-                
-                
-               
 
-                }
+            }
         }
         panel = new ChartPanel(chart);
         panel.setBounds(5, 10, 410, 350);
-        
-        
-        
-            
-        
-    
-        if(OpciondePastel.isSelected()){
-                Pastel.add(panel);
-                Pastel.repaint();
-       
 
-        }
-        else{
-            if(OpciondeBarras.isSelected()){
+        if (OpciondePastel.isSelected()) {
+            Pastel.add(panel);
+            Pastel.repaint();
+
+        } else {
+            if (OpciondeBarras.isSelected()) {
                 Barras.add(panel);
                 Barras.repaint();
 
             }
         }
-        
+
     }//GEN-LAST:event_BotonGraficarActionPerformed
 
     private void OpcionBarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionBarrasActionPerformed
-   
-       
-       
+
+
     }//GEN-LAST:event_OpcionBarrasActionPerformed
 
     private void OpciondeBarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpciondeBarrasActionPerformed
-       Barras.setVisible(true);
-       
-       OpciondePastel.setSelected(false);
-       
-       
+        Barras.setVisible(true);
+
+        OpciondePastel.setSelected(false);
+
+
     }//GEN-LAST:event_OpciondeBarrasActionPerformed
 
     private void OpciondePastelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpciondePastelActionPerformed
         Pastel.setVisible(true);
-        
+
         OpciondeBarras.setSelected(false);
-        
+
     }//GEN-LAST:event_OpciondePastelActionPerformed
 
-   public static void main(String args[]) {
-        
+    public static void main(String args[]) throws MessagingException {
+        Email email = new Email();
+
+        email.cambioDePropiedadesDeCorreo();
+        email.email();
+        email.enviarEmail();
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Graficoss().setVisible(true);

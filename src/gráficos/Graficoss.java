@@ -12,6 +12,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import gráficos.Email;
+import java.io.IOException;
 import javax.mail.MessagingException;
 
 import org.jfree.chart.plot.CategoryPlot;
@@ -293,8 +294,7 @@ public class Graficoss extends javax.swing.JFrame {
 
     }//GEN-LAST:event_OpciondePastelActionPerformed
 
-    public static void main(String args[]) throws MessagingException {
-        
+    public static void main(String args[]) throws MessagingException, IOException {
       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

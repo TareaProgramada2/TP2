@@ -78,7 +78,7 @@ public class baseDeDatos {
         return this.lista;
     }
     
-    public void almacenarFicheros(String condicion) throws IOException
+    public void almacenarFicheros() throws IOException
     {
         this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt",true);
         

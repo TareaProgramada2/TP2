@@ -36,7 +36,7 @@ public class baseDeDatos {
         this.lectorDeFichero = new FileReader (this.fichero);
     }
     
-    public void almacenamientoDeDatos() throws IOException
+    public void listaDeDatos() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         int contadorAuxiliar = 0;
@@ -78,9 +78,10 @@ public class baseDeDatos {
         return this.lista;
     }
     
-    public void almacenarFicheros() throws IOException
+    public void almacenarFicheros(String condicion) throws IOException
     {
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/1.txt");
+        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt",true);
+        
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         for (int i = 0; i < 10; i++)
             this.impresorDeArchibos.println("Linea " + i);

@@ -1,11 +1,23 @@
 package gráficos;
 
 import java.io.*;
+import gráficos.listaEnlazada;
 
 public class baseDeDatos {
+    class datosPersona
+    {
+        public String correo, nombre, tipo, horaIngreso, horaAtencion;
+        
+        public datosPersona()
+        {
+            correo=nombre=tipo=horaIngreso=horaAtencion=null;
+        }
+    }
+    
     private BufferedReader almacenadorTemporalDeLectura;
     private File fichero;
     private FileReader lectorDeFichero;
+    public  listaEnlazada lista = new listaEnlazada();
     
     public baseDeDatos()
     {
@@ -23,7 +35,7 @@ public class baseDeDatos {
     public void almacenamientoDeDatos() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
-        this.almacenadorTemporalDeLectura.readLine();
+        
         this.lectorDeFichero.close();
     }
     

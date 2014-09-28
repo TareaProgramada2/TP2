@@ -17,16 +17,20 @@ public class baseDeDatos {
     private BufferedReader almacenadorTemporalDeLectura;
     private File fichero;
     private FileReader lectorDeFichero;
-    public  listaEnlazada lista = new listaEnlazada();
+    private FileWriter escritorDeArchivos;
+    public PrintWriter impresorDeArchibos;
+    public listaEnlazada lista = new listaEnlazada();
     
     public baseDeDatos()
     {
         this.almacenadorTemporalDeLectura = null;
         this.fichero = null;
         this.lectorDeFichero = null;
+        this.escritorDeArchivos = null;
+        this.impresorDeArchibos = null;
     }
     
-    public void leer() throws FileNotFoundException, IOException
+    public void leerFicheros() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("/home/andres/NetBeansProjects/TP2/src/base de datos/1.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
@@ -69,7 +73,19 @@ public class baseDeDatos {
         this.lectorDeFichero.close();
     }
     
-   
+    public listaEnlazada getDatos()
+    {
+        return this.lista;
+    }
+    
+    public void almacenarFicheros() throws IOException
+    {
+        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/1.txt");
+        this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
+        for (int i = 0; i < 10; i++)
+            this.impresorDeArchibos.println("Linea " + i);
+        this.escritorDeArchivos.close();
+    } 
 }
     
 

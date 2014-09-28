@@ -295,7 +295,9 @@ public class Graficoss extends javax.swing.JFrame {
     }//GEN-LAST:event_OpciondePastelActionPerformed
 
     public static void main(String args[]) throws MessagingException, IOException {
-      
+
+        baseDeDatos a = new baseDeDatos();
+        a.almacenarFicheros();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Graficoss().setVisible(true);

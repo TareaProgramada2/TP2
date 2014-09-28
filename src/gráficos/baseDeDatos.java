@@ -35,7 +35,37 @@ public class baseDeDatos {
     public void almacenamientoDeDatos() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        int contadorAuxiliar = 0;
+        datosPersona persona = new datosPersona();
+        String linea = "";
         
+        while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
+        {
+            switch(contadorAuxiliar)
+            {
+                case 0:
+                    persona.correo = linea;
+                    break;
+                case 1:
+                    persona.nombre = linea;
+                    break;
+                case 3:
+                    persona.tipo = linea;
+                    break;
+                case 4:
+                    persona.horaIngreso = linea;
+                    break;
+                case 5:
+                    persona.horaAtencion = linea;
+                    break;
+            }
+            contadorAuxiliar++;
+            if (contadorAuxiliar==6)
+            {
+                this.lista.add(persona);
+                contadorAuxiliar = 0;
+            }
+        }
         this.lectorDeFichero.close();
     }
     

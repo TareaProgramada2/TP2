@@ -2,6 +2,7 @@ package gráficos;
 
 public class Persona{
     Cola discapacitados,embarazadas,adultos,corporativos,regulares;
+    String nombre,correo,tipo,horaentrada,horasalida;
     public final class Prueba {
 
     public Nodo primerNodo;

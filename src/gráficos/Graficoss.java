@@ -7,16 +7,12 @@ import org.jfree.chart.renderer.xy.XYSplineRenderer;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.axis.*;
 import org.jfree.data.xy.*;
-
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-
 import gráficos.Email;
 import java.io.IOException;
 import javax.mail.MessagingException;
-
 import org.jfree.chart.plot.CategoryPlot;
-
 import org.jfree.data.general.DefaultPieDataset;
 
 

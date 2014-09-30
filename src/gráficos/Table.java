@@ -11,9 +11,16 @@ package gráficos;
  * @author kenneth
  */
 import java.awt.Dimension;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Vector;
+import static javafx.scene.input.KeyCode.T;
+import javax.swing.DefaultRowSorter;
 import javax.swing.JFrame;
-import javax.swing.table.TableColumn;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
+import javax.swing.table.TableColumn;
 public class Table extends javax.swing.JFrame {
 
     /**
@@ -56,9 +63,9 @@ public class Table extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(43, 43, 43)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

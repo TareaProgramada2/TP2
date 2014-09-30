@@ -1,7 +1,7 @@
 package gráficos;
 
 import java.io.*;
-import gráficos.listaEnlazada;
+import gráficos.listaEnlazada.*;
 
 public class baseDeDatos {
     class datosPersona
@@ -32,7 +32,7 @@ public class baseDeDatos {
     
     public void leerFicheros() throws FileNotFoundException, IOException
     {        
-        this.fichero = new File ("/home/andres/NetBeansProjects/TP2/src/base de datos/1.txt");
+        this.fichero = new File ("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
     
@@ -53,20 +53,20 @@ public class baseDeDatos {
                 case 1:
                     persona.nombre = linea;
                     break;
-                case 3:
+                case 2:
                     persona.tipo = linea;
                     break;
-                case 4:
+                case 3:
                     persona.horaIngreso = linea;
                     break;
-                case 5:
+                case 4:
                     persona.horaAtencion = linea;
                     break;
             }
             contadorAuxiliar++;
-            if (contadorAuxiliar==6)
+            if (contadorAuxiliar==5)
             {
-                this.lista.add(persona);
+                this.lista.add((Object)persona);
                 contadorAuxiliar = 0;
             }
         }
@@ -86,7 +86,23 @@ public class baseDeDatos {
         for (int i = 0; i < 10; i++)
             this.impresorDeArchibos.println("Linea " + i);
         this.escritorDeArchivos.close();
-    } 
+    }
+    
+    public void sobreescribir() throws IOException
+    {
+        datosPersona persona = new datosPersona();
+        int size = lista.tamaño;
+        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/6.txt");
+        this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
+        
+        while(size>0)
+        {
+            persona = (datosPersona) lista.getAlcual();
+            this.impresorDeArchibos.println(persona.correo + "\n" + persona.nombre + "\n" + persona.tipo + "\n" + persona.horaIngreso + "\n" + persona.horaAtencion);
+            size--;
+        }
+        this.escritorDeArchivos.close();
+    }
 }
     
 

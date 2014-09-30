@@ -1,5 +1,7 @@
 package gráficos;
 
+import gráficos.baseDeDatos.*;
+
 public class listaEnlazada 
 {
     class Nodo
@@ -20,10 +22,10 @@ public class listaEnlazada
         this.tamaño = 0;
     }
     
-    public void add(Object datosPersona)
+    public void add(Object datPersona)
     {
         Nodo nuevo=null;
-        nuevo.dato = datosPersona;
+        nuevo.dato = datPersona;
         nuevo.siguiente = null;
         if (this.primero==null)
         {
@@ -37,6 +39,13 @@ public class listaEnlazada
             this.ultimo = nuevo;
         }
         this.tamaño++;
+    }
+    
+    public Object getAlcual()
+    {
+        Object aux = this.actual.dato;
+        this.actual = this.actual.siguiente;
+        return aux;
     }
     
 }

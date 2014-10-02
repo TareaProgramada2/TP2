@@ -47,30 +47,28 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="NuevoNombre" min="-2" pref="143" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" pref="167" max="-2" attributes="0"/>
-                              <Component id="Logo" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="BotonCambiarLogo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="Logo" min="-2" pref="215" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BotonCambiarNombre" min="-2" pref="167" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="LabelParaCambiarNomb" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="BotonCambiarLogo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotonCambiarNombre" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                              <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="NuevoNombre" min="-2" pref="819" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="596" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,31 +79,26 @@
                   <Component id="NuevoNombre" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Component id="Logo" min="-2" pref="125" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="BotonCambiarLogo" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="BotonCambiarNombre" min="-2" pref="25" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelParaCambiarNomb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Asignaci&#xf3;n de tiquete"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="BotonCambiarLogo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cambiar logo"/>
+            <Property name="text" type="java.lang.String" value="Definir logo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCambiarLogoActionPerformed"/>
@@ -113,16 +106,13 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonCambiarNombre">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cambiar nombre"/>
+            <Property name="text" type="java.lang.String" value="Definir nombre"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCambiarNombreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Logo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="LabelParaCambiarNomb">
           <Events>
@@ -135,6 +125,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="NuevoNombre">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Leelawadee" size="24" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ingresar"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

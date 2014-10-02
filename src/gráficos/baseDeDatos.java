@@ -1,25 +1,16 @@
 package gráficos;
 
 import java.io.*;
-import gráficos.listaEnlazada.*;
+import gráficos.Matriz;
 
-public class baseDeDatos {
-    class datosPersona
-    {
-        public String correo, nombre, tipo, horaIngreso, horaAtencion;
-        
-        public datosPersona()
-        {
-            correo=nombre=tipo=horaIngreso=horaAtencion=null;
-        }
-    }
-    
+public class baseDeDatos 
+{ 
     private BufferedReader almacenadorTemporalDeLectura;
     private File fichero;
     private FileReader lectorDeFichero;
     private FileWriter escritorDeArchivos;
     public PrintWriter impresorDeArchibos;
-    public listaEnlazada lista = new listaEnlazada();
+    public Matriz matrizClientes = new Matriz();
     
     public baseDeDatos()
     {
@@ -39,68 +30,56 @@ public class baseDeDatos {
     public void listaDeDatos() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
-        int contadorAuxiliar = 0;
-        datosPersona persona = new datosPersona();
         String linea = "";
         
         while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
         {
-            switch(contadorAuxiliar)
+            char[] arregloLinea = linea.toCharArray();
+            linea="";
+            for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
             {
-                case 0:
-                    persona.correo = linea;
+                
+                if(arregloLinea[ind]=='#')
+                {
                     break;
-                case 1:
-                    persona.nombre = linea;
-                    break;
-                case 2:
-                    persona.tipo = linea;
-                    break;
-                case 3:
-                    persona.horaIngreso = linea;
-                    break;
-                case 4:
-                    persona.horaAtencion = linea;
-                    break;
-            }
-            contadorAuxiliar++;
-            if (contadorAuxiliar==5)
-            {
-                this.lista.add((Object)persona);
-                contadorAuxiliar = 0;
+                }
+                if(arregloLinea[ind] != ',')
+                {
+                    linea = linea + arregloLinea[ind] + "";
+                }
+                else
+                {
+                    this.matrizClientes.add(linea);
+                    linea="";
+                }    
             }
         }
         this.lectorDeFichero.close();
     }
     
-    public listaEnlazada getDatos()
+    public String[][] getDatos()
     {
-        return this.lista;
+        return this.matrizClientes.getMatriz();
     }
     
-    public void almacenarFicheros() throws IOException
+    public void imprimirDatos()
+    {
+        this.matrizClientes.imprimir();
+    }
+    
+    public void almacenarFicherosClientes(String dato) throws IOException
     {
         this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt",true);
-        
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        for (int i = 0; i < 10; i++)
-            this.impresorDeArchibos.println("Linea " + i);
+        this.impresorDeArchibos.println(dato);
         this.escritorDeArchivos.close();
     }
     
-    public void sobreescribir() throws IOException
+    public void almacenarFicherosHoraAtencion(String dato,int prioridad,String fecha) throws IOException
     {
-        datosPersona persona = new datosPersona();
-        int size = lista.tamaño;
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/6.txt");
+        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/6.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        
-        while(size>0)
-        {
-            persona = (datosPersona) lista.getAlcual();
-            this.impresorDeArchibos.println(persona.correo + "\n" + persona.nombre + "\n" + persona.tipo + "\n" + persona.horaIngreso + "\n" + persona.horaAtencion);
-            size--;
-        }
+        this.impresorDeArchibos.println(dato + "," + prioridad + "," + fecha);
         this.escritorDeArchivos.close();
     }
 }

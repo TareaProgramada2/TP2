@@ -705,6 +705,11 @@ public class Graficoss extends javax.swing.JFrame {
 
     public static void main(String args[]) throws MessagingException, IOException {
 
+    
+        baseDeDatos a = new baseDeDatos();
+        a.leerFicheros();
+        a.listaDeDatos();
+        a.imprimirDatos();
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

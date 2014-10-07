@@ -1,19 +1,20 @@
 package gráficos;
 
-import java.util.Locale;
-import javax.swing.JOptionPane;
-import org.jfree.chart.*;
-import org.jfree.chart.renderer.xy.XYSplineRenderer;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.axis.*;
-import org.jfree.data.xy.*;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
 import gráficos.Email;
 import java.io.IOException;
+import java.util.Locale;
 import javax.mail.MessagingException;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import org.jfree.chart.*;
+import org.jfree.chart.axis.*;
 import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYSplineRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.xy.*;
 
 
 
@@ -32,6 +33,8 @@ public class Graficoss extends javax.swing.JFrame {
         this.Pastel.setVisible(false);//Hace visible el panel donde estará el grafico pastel
         this.Barras.setVisible(false);//Hace visible el panel donde estará el grafico de barras
         NuevoNombre2.setText(VentanaPrincipal.variable);
+        ImagenIcono.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
+        
 
         this.setVisible(true);
     }
@@ -64,6 +67,7 @@ public class Graficoss extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         NuevoNombre2 = new javax.swing.JLabel();
+        ImagenIcono = new javax.swing.JLabel();
 
         jCheckBox2.setText("Barras");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +284,11 @@ public class Graficoss extends javax.swing.JFrame {
         OpcionDia.setBackground(new java.awt.Color(0, 102, 102));
         OpcionDia.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpcionDia.setText("Día");
+        OpcionDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcionDiaActionPerformed(evt);
+            }
+        });
 
         OpcionHora.setBackground(new java.awt.Color(0, 102, 102));
         OpcionHora.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
@@ -296,6 +305,10 @@ public class Graficoss extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Leelawadee", 0, 24)); // NOI18N
         jLabel2.setText("Tipo de gráfico");
 
+        NuevoNombre2.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
+
+        ImagenIcono.setText("jLabel3");
+
         javax.swing.GroupLayout PanelPrincLayout = new javax.swing.GroupLayout(PanelPrinc);
         PanelPrinc.setLayout(PanelPrincLayout);
         PanelPrincLayout.setHorizontalGroup(
@@ -305,24 +318,22 @@ public class Graficoss extends javax.swing.JFrame {
                 .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPrincLayout.createSequentialGroup()
                         .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(OpcionTipo)
-                                .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(PanelPrincLayout.createSequentialGroup()
-                                    .addComponent(OpcionHora)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(OpcionDia)))
+                            .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelPrincLayout.createSequentialGroup()
                                 .addComponent(OpciondeBarras)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(OpciondePastel))
+                            .addGroup(PanelPrincLayout.createSequentialGroup()
+                                .addComponent(OpcionHora)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(OpciondePastel)))
+                                .addComponent(OpcionDia))
+                            .addComponent(jLabel2)
+                            .addComponent(OpcionTipo)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelPrincLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         PanelPrincLayout.setVerticalGroup(
@@ -330,28 +341,28 @@ public class Graficoss extends javax.swing.JFrame {
             .addGroup(PanelPrincLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincLayout.createSequentialGroup()
+                    .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelPrincLayout.createSequentialGroup()
+                        .addComponent(ImagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(OpcionTipo)
                         .addGap(18, 18, 18)
                         .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(OpcionHora)
                             .addComponent(OpcionDia))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
                         .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(OpciondeBarras)
                             .addComponent(OpciondePastel))
                         .addGap(18, 18, 18)
-                        .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincLayout.createSequentialGroup()
-                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -698,14 +709,21 @@ public class Graficoss extends javax.swing.JFrame {
     }//GEN-LAST:event_OpciondePastelActionPerformed
 
     private void OpcionTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionTipoActionPerformed
-        
+        OpcionHora.setSelected(false);
+        OpcionDia.setSelected(false);
        
         
     }//GEN-LAST:event_OpcionTipoActionPerformed
 
     private void OpcionHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionHoraActionPerformed
-        // TODO add your handling code here:
+        OpcionTipo.setSelected(false);
+        OpcionDia.setSelected(false);
     }//GEN-LAST:event_OpcionHoraActionPerformed
+
+    private void OpcionDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionDiaActionPerformed
+        OpcionHora.setSelected(false);
+        OpcionTipo.setSelected(false);
+    }//GEN-LAST:event_OpcionDiaActionPerformed
 
     public static void main(String args[]) throws MessagingException, IOException {
 
@@ -722,6 +740,7 @@ public class Graficoss extends javax.swing.JFrame {
     private javax.swing.JPanel BarrasDia;
     private javax.swing.JPanel BarrasHora;
     private javax.swing.JButton BotonGraficar;
+    private javax.swing.JLabel ImagenIcono;
     private javax.swing.JLabel NuevoNombre2;
     private javax.swing.JCheckBox OpcionBarras;
     private javax.swing.JRadioButton OpcionDia;

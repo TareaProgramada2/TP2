@@ -17,9 +17,10 @@ public class IngresoClientes extends javax.swing.JFrame {
         NuevoNombre.setText(VentanaPrincipal.variable);
         ImagenNueva.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
         ImagenNueva.setSize(200,200);
+        
         this.setVisible(true);
     }
-//frehr
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

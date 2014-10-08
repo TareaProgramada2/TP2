@@ -34,7 +34,7 @@ public class Graficoss extends javax.swing.JFrame {
         this.Barras.setVisible(false);//Hace visible el panel donde estará el grafico de barras
         NuevoNombre2.setText(VentanaPrincipal.variable);
         ImagenIcono.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
-        
+        ImagenIcono.setSize(200,200);
 
         this.setVisible(true);
     }

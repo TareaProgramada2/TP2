@@ -10,18 +10,26 @@ public class baseDeDatos
     private File fichero;
     private FileReader lectorDeFichero;
     private FileWriter escritorDeArchivos;
-    public int Hora;
-    public int Minutos;
     public PrintWriter impresorDeArchibos;
     public Matriz matrizClientes = new Matriz();
     public Calendar fechaYhora = new GregorianCalendar();
-    
+    public int Hora;
+    public int Minutos;
+    public int Dia;
+    public int Mes;
+    public int Año;
     
     public void getHora()
     {
         this.Hora = this.fechaYhora.get(Calendar.HOUR_OF_DAY);
         this.Minutos = this.fechaYhora.get(Calendar.MINUTE);
-        System.out.println(this.Hora+":"+this.Minutos);
+    }
+    
+    public void getFecha()
+    {
+        this.Año = this.fechaYhora.get(Calendar.YEAR);
+        this.Mes = (this.fechaYhora.get(Calendar.MONTH)+1);
+        this.Dia = this.fechaYhora.get(Calendar.DAY_OF_MONTH);
     }
     
     public baseDeDatos()

@@ -10,7 +10,11 @@ package gráficos;
  *
  * @author kenneth
  */
+import gráficos.baseDeDatos.*;
 import java.awt.Dimension;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.table.*;
 import javax.swing.table.TableColumn;
@@ -19,7 +23,7 @@ public class Table extends javax.swing.JFrame {
     /**
      * Creates new form Table
      */
-    public Table() {
+    public Table() throws IOException {
         initComponents();
         Tabla h = new Tabla();
     }
@@ -55,16 +59,17 @@ public class Table extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(174, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,7 +104,11 @@ public class Table extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Table().setVisible(true);
+            try {
+                new Table().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Table.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
@@ -108,24 +117,29 @@ public class Table extends javax.swing.JFrame {
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 public class Tabla extends JFrame{
+    baseDeDatos a = new baseDeDatos();
     TableColumn columna;
-    String NombresColumnas[] = {"nombre","tipo","hora"};
-    String Matriz[][]= {{"Jose","adulto mayor","11:30"},{"Maria","discapacitada","09:34"},{"Alberto","regular","06:52"}};
+    String NombresColumnas[] = {"nombre","correo","hora","fecha","tipo"};
     
-    Tabla(){
+    
+    Tabla() throws IOException{
+        a.leerFicheros();
+        a.listaDeDatos();
+        String Matriz[][]= a.getDatos();
+        
         //Crea la tabla y agrega la matriz y los nobmbres de las columnas
         tabla.setModel(new DefaultTableModel(Matriz,NombresColumnas));
        
         //Cambia el ancho de la columna
         columna = tabla.getColumnModel().getColumn(0);
-        columna.setPreferredWidth(100);
-        columna = tabla.getColumnModel().getColumn(1);
         columna.setPreferredWidth(200);
+        columna = tabla.getColumnModel().getColumn(1);
+        columna.setPreferredWidth(400);
         tabla.setAutoCreateRowSorter(true);
         
         //Cambia la vista del scroll
-        tabla.setPreferredScrollableViewportSize(new Dimension(300,100));
+        tabla.setPreferredScrollableViewportSize(new Dimension(400,200));
     }
-}
+    }
 }
 

@@ -57,7 +57,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         jTextArea1.setText("1. Persona discapacitada\n2. Adulto mayor\n3. Mujer embarazada\n4. Cliente corporativo\n5. Cliente regular");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel4.setText("Número de cliente:");
+        jLabel4.setText("Número de tipo de cliente:");
 
         jButton1.setText("Registrar");
 

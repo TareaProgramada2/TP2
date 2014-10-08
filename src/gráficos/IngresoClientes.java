@@ -178,7 +178,8 @@ public class IngresoClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistroNombreActionPerformed
 
     private void BotonRegistrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClientesActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_BotonRegistrarClientesActionPerformed
 
     private void RegistroCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCorreoActionPerformed

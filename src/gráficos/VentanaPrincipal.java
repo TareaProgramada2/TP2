@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import gráficos.baseDeDatos;
-
+//ejkrjf
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 

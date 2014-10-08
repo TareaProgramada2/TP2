@@ -18,19 +18,22 @@ public class baseDeDatos
     public int Dia;
     public int Mes;
     public int Año;
-    public String rutaImagen;
     
-    public void getHora()
+    public String getHora()
     {
         this.Hora = this.fechaYhora.get(Calendar.HOUR_OF_DAY);
         this.Minutos = this.fechaYhora.get(Calendar.MINUTE);
+        String hor = Hora+""+":"+Minutos+"";
+        return hor;
     }
     
-    public void getFecha()
+    public String getFecha()
     {
         this.Año = this.fechaYhora.get(Calendar.YEAR);
         this.Mes = (this.fechaYhora.get(Calendar.MONTH)+1);
         this.Dia = this.fechaYhora.get(Calendar.DAY_OF_MONTH);
+        String fecha = Dia+""+"/"+Mes+""+"/"+Año+"";
+        return fecha;
     }
     
     public baseDeDatos()
@@ -44,7 +47,7 @@ public class baseDeDatos
     
     public void leerFicheros() throws FileNotFoundException, IOException
     {        
-        this.fichero = new File ("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt");
+        this.fichero = new File ("base de datos/5.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
     
@@ -90,23 +93,30 @@ public class baseDeDatos
     
     public void almacenarFicherosClientes(String dato) throws IOException
     {
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/5.txt",true);
+        String aux = getHora();
+        dato = dato + "," + aux;
+        aux = getFecha();
+        dato = dato + "," + aux +",#";
+        this.escritorDeArchivos = new FileWriter("base de datos/5.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(dato);
         this.escritorDeArchivos.close();
     }
     
-    public void almacenarFicherosHoraAtencion(String dato,int prioridad,String fecha) throws IOException
+    public void almacenarFicherosHoraAtencion(String dato) throws IOException
     {
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/6.txt",true);
+        String aux = getHora();
+        dato = aux +"," + dato;
+        aux = getFecha();
+        dato = dato + "," + aux +",#";
+        this.escritorDeArchivos = new FileWriter("base de datos/6.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        this.impresorDeArchibos.println(dato + "," + prioridad + "," + fecha);
+        this.impresorDeArchibos.println( dato );
         this.escritorDeArchivos.close();
     }
     public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
     {
-        this.rutaImagen = ruta;
-        this.escritorDeArchivos = new FileWriter(this.rutaImagen+".txt");
+        this.escritorDeArchivos = new FileWriter("base de datos/nombreYlogo.txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");
         this.escritorDeArchivos.close();

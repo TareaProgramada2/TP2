@@ -3,12 +3,14 @@
 package gráficos;
 
 import javax.swing.ImageIcon;
+import gráficos.baseDeDatos.*;
 
 
 public class IngresoClientes extends javax.swing.JFrame {
 
     
     public IngresoClientes() {
+        baseDeDatos datos = new baseDeDatos();
         initComponents();
         NuevoNombre.setText(VentanaPrincipal.variable);
         ImagenNueva.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
@@ -48,6 +50,12 @@ public class IngresoClientes extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
             }
         });
 
@@ -163,6 +171,10 @@ public class IngresoClientes extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -119,7 +119,7 @@ public class Table extends javax.swing.JFrame {
 public class Tabla extends JFrame{
     baseDeDatos a = new baseDeDatos();
     TableColumn columna;
-    String NombresColumnas[] = {"nombre","correo","hora","fecha","tipo"};
+    String NombresColumnas[] = {"nombre","correo","tipo","hora","fecha"};
     
     
     Tabla() throws IOException{

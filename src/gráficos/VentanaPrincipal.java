@@ -167,22 +167,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Logo.setIcon(newicono);
             Logo.setSize(200,200);   
         }
-        File nombreylogo;
-        FileWriter w;
-        BufferedWriter bw;
-        PrintWriter wr;
+        
         
         
             try{
                 a.almacenarnNombreyLogo(variable2, rutaimagen);
-                nombreylogo=new File("C:\\Users\\gollo\\Desktop\\Nueva Carpeta\\nombreylogo.txt");
-                w=new FileWriter(nombreylogo);
-                bw= new BufferedWriter(w);
-                wr = new PrintWriter(bw);
-                variable2=LabelParaCambiarNomb.getText();
-                wr.write(rutaimagen+","+variable2);
-            wr.close();
-            bw.close();
+                
+            
             }catch(IOException e){
                 System.err.println("No se creo el archivo");
             }

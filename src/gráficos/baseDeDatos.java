@@ -104,7 +104,7 @@ public class baseDeDatos
     }
     public void almacenarnNombreyLogo(String nombre,String logo) throws IOException
     {
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/nombreylogo.txt");
+        this.escritorDeArchivos = new FileWriter("\\base de datos\\nombreylogo.txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(nombre +  "," + logo);
         this.escritorDeArchivos.close();

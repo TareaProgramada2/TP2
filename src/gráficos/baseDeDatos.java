@@ -1,5 +1,6 @@
 package gráficos;
 
+import java.util.*;
 import java.io.*;
 import gráficos.Matriz;
 
@@ -11,6 +12,25 @@ public class baseDeDatos
     private FileWriter escritorDeArchivos;
     public PrintWriter impresorDeArchibos;
     public Matriz matrizClientes = new Matriz();
+    public Calendar fechaYhora = new GregorianCalendar();
+    public int Hora;
+    public int Minutos;
+    public int Dia;
+    public int Mes;
+    public int Año;
+    
+    public void getHora()
+    {
+        this.Hora = this.fechaYhora.get(Calendar.HOUR_OF_DAY);
+        this.Minutos = this.fechaYhora.get(Calendar.MINUTE);
+    }
+    
+    public void getFecha()
+    {
+        this.Año = this.fechaYhora.get(Calendar.YEAR);
+        this.Mes = (this.fechaYhora.get(Calendar.MONTH)+1);
+        this.Dia = this.fechaYhora.get(Calendar.DAY_OF_MONTH);
+    }
     
     public baseDeDatos()
     {

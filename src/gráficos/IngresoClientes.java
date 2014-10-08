@@ -13,6 +13,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         NuevoNombre.setText(VentanaPrincipal.variable);
         ImagenNueva.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
         ImagenNueva.setSize(200,200);
+        this.setVisible(true);
     }
 
     

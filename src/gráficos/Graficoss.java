@@ -307,8 +307,6 @@ public class Graficoss extends javax.swing.JFrame {
 
         NuevoNombre2.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
 
-        ImagenIcono.setText("jLabel3");
-
         javax.swing.GroupLayout PanelPrincLayout = new javax.swing.GroupLayout(PanelPrinc);
         PanelPrinc.setLayout(PanelPrincLayout);
         PanelPrincLayout.setHorizontalGroup(
@@ -334,7 +332,7 @@ public class Graficoss extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         PanelPrincLayout.setVerticalGroup(
             PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,9 +367,7 @@ public class Graficoss extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
+            .addComponent(PanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -52,10 +52,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="PanelPrinc" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
-          </Group>
+          <Component id="PanelPrinc" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -104,7 +101,7 @@
                       </Group>
                       <Component id="NuevoNombre2" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                  <EmptySpace pref="149" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -477,9 +474,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="ImagenIcono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel3"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

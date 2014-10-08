@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import gráficos.baseDeDatos;
 
 
 public class VentanaPrincipal extends javax.swing.JFrame {
@@ -15,6 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private FileNameExtensionFilter filter=new FileNameExtensionFilter("Archivo de imagen","jpg");
     public static String rutaimagen;
     private static String variable2;
+    baseDeDatos a = new baseDeDatos();
     
     public VentanaPrincipal() {
         initComponents();
@@ -33,7 +35,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         LabelParaCambiarNomb = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         NuevoNombre = new javax.swing.JLabel();
-        BotonParaVerGraf = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -63,13 +64,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Nuevo nombre:");
 
         NuevoNombre.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
-
-        BotonParaVerGraf.setText("Mostrar gráficos");
-        BotonParaVerGraf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonParaVerGrafActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Cantidad de cajas:");
 
@@ -113,9 +107,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(LabelParaCambiarNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(37, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonParaVerGraf)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,9 +134,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(34, 34, 34)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonParaVerGraf)
-                .addGap(29, 29, 29))
+                .addGap(67, 67, 67))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +174,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
             try{
+                a.almacenarnNombreyLogo(variable2, rutaimagen);
                 nombreylogo=new File("C:\\Users\\gollo\\Desktop\\Nueva Carpeta\\nombreylogo.txt");
                 w=new FileWriter(nombreylogo);
                 bw= new BufferedWriter(w);
@@ -208,18 +199,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LabelParaCambiarNombActionPerformed
 
-    private void BotonParaVerGrafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonParaVerGrafActionPerformed
-        Graficoss pantallagraficos=new Graficoss();
-        pantallagraficos.setVisible(true);
-    }//GEN-LAST:event_BotonParaVerGrafActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        IngresoClientes pantallaClientes=new IngresoClientes();
-        pantallaClientes.setVisible(true);
+        SegundaVentana ventana2=new SegundaVentana();
+        ventana2.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -263,7 +249,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCambiarLogo;
     private javax.swing.JButton BotonCambiarNombre;
-    private javax.swing.JButton BotonParaVerGraf;
     private javax.swing.JTextField LabelParaCambiarNomb;
     private javax.swing.JLabel Logo;
     public javax.swing.JLabel NuevoNombre;

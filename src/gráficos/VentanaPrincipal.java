@@ -177,10 +177,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 w=new FileWriter(nombreylogo);
                 bw= new BufferedWriter(w);
                 wr = new PrintWriter(bw);
-                
-                
-                wr.write(rutaimagen);
-                wr.write("\n "+variable);
+                wr.write(rutaimagen+","+variable);
                 
                 
                

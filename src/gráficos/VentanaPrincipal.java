@@ -14,6 +14,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private FileNameExtensionFilter filter=new FileNameExtensionFilter("Archivo de imagen","jpg");
     public static String rutaimagen;
+    private static String variable2;
     
     public VentanaPrincipal() {
         initComponents();
@@ -168,8 +169,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(opcion==JFileChooser.APPROVE_OPTION){
             String file = dlg.getSelectedFile().getPath();
             rutaimagen=file;
-            
-            
             Logo.setIcon(new ImageIcon(file));
             ImageIcon icono=new ImageIcon(file); 
             Image logo = icono.getImage();
@@ -189,14 +188,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 w=new FileWriter(nombreylogo);
                 bw= new BufferedWriter(w);
                 wr = new PrintWriter(bw);
-                wr.write(rutaimagen+","+variable);
-                
-                
-                
-               
-                
-
-                
+                variable2=LabelParaCambiarNomb.getText();
+                wr.write(rutaimagen+","+variable2);
             wr.close();
             bw.close();
             }catch(IOException e){

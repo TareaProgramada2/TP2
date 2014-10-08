@@ -18,6 +18,7 @@ public class baseDeDatos
     public int Dia;
     public int Mes;
     public int Año;
+    public String rutaImagen;
     
     public void getHora()
     {
@@ -102,11 +103,12 @@ public class baseDeDatos
         this.impresorDeArchibos.println(dato + "," + prioridad + "," + fecha);
         this.escritorDeArchivos.close();
     }
-    public void almacenarnNombreyLogo(String nombre,String logo) throws IOException
+    public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
     {
-        this.escritorDeArchivos = new FileWriter("/home/andres/NetBeansProjects/TP2/src/base de datos/nombreylogo.txt");
+        this.rutaImagen = ruta;
+        this.escritorDeArchivos = new FileWriter(this.rutaImagen+".txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        this.impresorDeArchibos.println(nombre +  "," + logo+  ",#");
+        this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");
         this.escritorDeArchivos.close();
     }
 }

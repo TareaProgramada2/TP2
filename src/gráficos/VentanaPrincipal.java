@@ -15,7 +15,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private FileNameExtensionFilter filter=new FileNameExtensionFilter("Archivo de imagen","jpg");
     public static String rutaimagen;
-    private static String variable2;
+    public static String variable2;
     baseDeDatos a = new baseDeDatos();
     
     public VentanaPrincipal() {

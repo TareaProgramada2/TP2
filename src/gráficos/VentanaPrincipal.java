@@ -41,7 +41,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         BotonCambiarLogo.setBackground(new java.awt.Color(153, 153, 153));
         BotonCambiarLogo.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N

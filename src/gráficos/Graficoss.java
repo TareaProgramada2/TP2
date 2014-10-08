@@ -93,9 +93,9 @@ public class Graficoss extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 102));
 
-        PanelPrinc.setBackground(new java.awt.Color(0, 102, 102));
+        PanelPrinc.setBackground(new java.awt.Color(0, 153, 153));
 
-        OpciondeBarras.setBackground(new java.awt.Color(0, 102, 102));
+        OpciondeBarras.setBackground(new java.awt.Color(0, 153, 153));
         OpciondeBarras.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpciondeBarras.setText("Barras");
         OpciondeBarras.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,7 @@ public class Graficoss extends javax.swing.JFrame {
             }
         });
 
-        OpciondePastel.setBackground(new java.awt.Color(0, 102, 102));
+        OpciondePastel.setBackground(new java.awt.Color(0, 153, 153));
         OpciondePastel.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpciondePastel.setText("Pastel");
         OpciondePastel.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +113,7 @@ public class Graficoss extends javax.swing.JFrame {
             }
         });
 
+        BotonGraficar.setBackground(new java.awt.Color(0, 153, 153));
         BotonGraficar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BotonGraficar.setText("Gráficar Datos");
         BotonGraficar.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +122,9 @@ public class Graficoss extends javax.swing.JFrame {
             }
         });
 
-        capas.setBackground(new java.awt.Color(51, 102, 0));
+        capas.setBackground(new java.awt.Color(0, 153, 153));
 
-        BarrasDia.setBackground(new java.awt.Color(0, 102, 102));
+        BarrasDia.setBackground(new java.awt.Color(0, 153, 153));
         BarrasDia.setPreferredSize(new java.awt.Dimension(401, 347));
 
         javax.swing.GroupLayout BarrasDiaLayout = new javax.swing.GroupLayout(BarrasDia);
@@ -137,7 +138,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGap(0, 389, Short.MAX_VALUE)
         );
 
-        PastelDia.setBackground(new java.awt.Color(0, 102, 102));
+        PastelDia.setBackground(new java.awt.Color(0, 153, 153));
         PastelDia.setPreferredSize(new java.awt.Dimension(401, 347));
 
         javax.swing.GroupLayout PastelDiaLayout = new javax.swing.GroupLayout(PastelDia);
@@ -151,7 +152,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGap(0, 389, Short.MAX_VALUE)
         );
 
-        Pastel.setBackground(new java.awt.Color(0, 102, 102));
+        Pastel.setBackground(new java.awt.Color(0, 153, 153));
         Pastel.setPreferredSize(new java.awt.Dimension(401, 347));
 
         javax.swing.GroupLayout PastelLayout = new javax.swing.GroupLayout(Pastel);
@@ -165,7 +166,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGap(0, 398, Short.MAX_VALUE)
         );
 
-        Barras.setBackground(new java.awt.Color(0, 102, 102));
+        Barras.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout BarrasLayout = new javax.swing.GroupLayout(Barras);
         Barras.setLayout(BarrasLayout);
@@ -178,7 +179,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGap(0, 383, Short.MAX_VALUE)
         );
 
-        BarrasHora.setBackground(new java.awt.Color(0, 102, 102));
+        BarrasHora.setBackground(new java.awt.Color(0, 153, 153));
         BarrasHora.setPreferredSize(new java.awt.Dimension(401, 347));
 
         javax.swing.GroupLayout BarrasHoraLayout = new javax.swing.GroupLayout(BarrasHora);
@@ -192,7 +193,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGap(0, 386, Short.MAX_VALUE)
         );
 
-        PastelHora.setBackground(new java.awt.Color(0, 102, 102));
+        PastelHora.setBackground(new java.awt.Color(0, 153, 153));
         PastelHora.setPreferredSize(new java.awt.Dimension(401, 347));
 
         javax.swing.GroupLayout PastelHoraLayout = new javax.swing.GroupLayout(PastelHora);
@@ -272,7 +273,7 @@ public class Graficoss extends javax.swing.JFrame {
         capas.setLayer(BarrasHora, javax.swing.JLayeredPane.DEFAULT_LAYER);
         capas.setLayer(PastelHora, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        OpcionTipo.setBackground(new java.awt.Color(0, 102, 102));
+        OpcionTipo.setBackground(new java.awt.Color(0, 153, 153));
         OpcionTipo.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpcionTipo.setText("Tipo de cliente");
         OpcionTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +282,7 @@ public class Graficoss extends javax.swing.JFrame {
             }
         });
 
-        OpcionDia.setBackground(new java.awt.Color(0, 102, 102));
+        OpcionDia.setBackground(new java.awt.Color(0, 153, 153));
         OpcionDia.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpcionDia.setText("Día");
         OpcionDia.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +291,7 @@ public class Graficoss extends javax.swing.JFrame {
             }
         });
 
-        OpcionHora.setBackground(new java.awt.Color(0, 102, 102));
+        OpcionHora.setBackground(new java.awt.Color(0, 153, 153));
         OpcionHora.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         OpcionHora.setText("Hora");
         OpcionHora.addActionListener(new java.awt.event.ActionListener() {
@@ -314,6 +315,7 @@ public class Graficoss extends javax.swing.JFrame {
             .addGroup(PanelPrincLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelPrincLayout.createSequentialGroup()
                         .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,8 +332,7 @@ public class Graficoss extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ImagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
         PanelPrincLayout.setVerticalGroup(

@@ -35,13 +35,16 @@ public class SegundaVentana extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         Botongraficos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TXTCajeros = new javax.swing.JTextArea();
         NuevoNombre = new javax.swing.JLabel();
         NuevaImagen = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        jButton1.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jButton1.setText("Registrar cliente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,8 +52,10 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jButton2.setText("Liberar cajero");
 
+        Botongraficos.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         Botongraficos.setText("Mostrar gráficos");
         Botongraficos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,10 +63,14 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TXTCajeros.setColumns(20);
+        TXTCajeros.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
+        TXTCajeros.setRows(5);
+        jScrollPane1.setViewportView(TXTCajeros);
 
+        NuevoNombre.setFont(new java.awt.Font("Leelawadee", 0, 13)); // NOI18N
+
+        jButton3.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jButton3.setText("Mostrar tabla de clientes");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,11 +201,11 @@ public class SegundaVentana extends javax.swing.JFrame {
     private javax.swing.JButton Botongraficos;
     private javax.swing.JLabel NuevaImagen;
     private javax.swing.JLabel NuevoNombre;
+    private javax.swing.JTextArea TXTCajeros;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

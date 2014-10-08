@@ -69,6 +69,7 @@ public class baseDeDatos
         this.lectorDeFichero.close();
     }
     
+    
     public String[][] getDatos()
     {
         return this.matrizClientes.getMatriz();

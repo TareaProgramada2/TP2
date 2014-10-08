@@ -151,8 +151,8 @@ public class SegundaVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_BotongraficosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        IngresoClientes ingresar=new IngresoClientes();
-        ingresar.setVisible(true);
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

@@ -25,6 +25,7 @@ public class Email {
 	Properties propiedadesDelEmail;
 	Session sessionUsuarioEmail;
 	MimeMessage mensaje;
+        baseDeDatos hora = new baseDeDatos(); 
 
 	public void cambioDePropiedadesDeCorreo() 
         {
@@ -36,16 +37,16 @@ public class Email {
 	}
         
 
-	public void email() throws AddressException,
+	public void email(String email, String mensaj) throws AddressException,
 			MessagingException {
                 MimeMultipart multiParte = new MimeMultipart();
-		String[] toEmails = { "andrespato1@gmail.com" };
+		String[] toEmails = { email };
 		String emailSubject = "Bank";
                 BodyPart texto = new MimeBodyPart();
-                texto.setText("Banco pura birra y nada de guaro");
+                texto.setText(mensaj+hora.getHora());
                 BodyPart adjunto = new MimeBodyPart();
-                adjunto.setDataHandler(new DataHandler(new FileDataSource("/home/andres/20061220034317!Stop_hand.png")));
-                adjunto.setFileName("20061220034317!Stop_hand.png");
+                adjunto.setDataHandler(new DataHandler(new FileDataSource("/home/andres/Imágenes/Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg")));
+                adjunto.setFileName("Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg");
                 
                 multiParte.addBodyPart(texto);
                 multiParte.addBodyPart(adjunto);

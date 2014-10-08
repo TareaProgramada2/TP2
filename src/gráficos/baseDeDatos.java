@@ -1,5 +1,6 @@
 package gráficos;
 
+import java.util.*;
 import java.io.*;
 import gráficos.Matriz;
 
@@ -9,8 +10,19 @@ public class baseDeDatos
     private File fichero;
     private FileReader lectorDeFichero;
     private FileWriter escritorDeArchivos;
+    public int Hora;
+    public int Minutos;
     public PrintWriter impresorDeArchibos;
     public Matriz matrizClientes = new Matriz();
+    public Calendar fechaYhora = new GregorianCalendar();
+    
+    
+    public void getHora()
+    {
+        this.Hora = this.fechaYhora.get(Calendar.HOUR_OF_DAY);
+        this.Minutos = this.fechaYhora.get(Calendar.MINUTE);
+        System.out.println(this.Hora+":"+this.Minutos);
+    }
     
     public baseDeDatos()
     {

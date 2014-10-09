@@ -2,12 +2,12 @@
 
 package gráficos;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import gráficos.baseDeDatos.*;
 import gráficos.Email.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.MessagingException;
 
 
@@ -18,16 +18,15 @@ public class IngresoClientes extends javax.swing.JFrame {
     public baseDeDatos baseDat = new baseDeDatos();
     public Email email= new Email();
     
+
     
     public IngresoClientes() {
-        
         initComponents();
         NuevoNombre.setText(VentanaPrincipal.variable);
         ImagenNueva.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
         ImagenNueva.setSize(200,200);
         this.setVisible(true);
     }
-    
 //frehr
     
     @SuppressWarnings("unchecked")
@@ -189,21 +188,23 @@ public class IngresoClientes extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         variableNombre = RegistroNombre.getText();
-        variablecorreo = RegistroCorreo.getText();
-        variableTipo = RegistroTipodeCliente.getText();
-        String mensaj = "usted acaba de ingresar al banco su hora de ingreso es:";
+        variablecorreo=RegistroCorreo.getText();
+        variableTipo=RegistroTipodeCliente.getText();
+        String aux = variableNombre+","+variablecorreo+","+variableTipo;
         try {
-            email.cambioDePropiedadesDeCorreo();
-            email.email(variablecorreo,mensaj);
-            email.enviarEmail();
+            baseDat.almacenarFicherosClientes(aux);
+        } catch (IOException ex) {
+            Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        email.cambioDePropiedadesDeCorreo();
+        try {
+            email.email(variablecorreo, "estimado cliente su registro en el banco fue a la hora: ");
         } catch (MessagingException ex) {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        String dato = variableNombre +"," + variablecorreo+"," + variableTipo;
         try {
-            baseDat.almacenarFicherosClientes(dato);
-        } catch (IOException ex) {
+            email.enviarEmail();
+        } catch (MessagingException ex) {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

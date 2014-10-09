@@ -32,7 +32,7 @@ public class Graficoss extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);//Ubica el panel
         this.Pastel.setVisible(false);//Hace visible el panel donde estará el grafico pastel
         this.Barras.setVisible(false);//Hace visible el panel donde estará el grafico de barras
-        NuevoNombre2.setText(VentanaPrincipal.variable2);
+        NuevoNombre2.setText(VentanaPrincipal.variable2);//define el nombre
         ImagenIcono.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
         ImagenIcono.setSize(200,200);
 

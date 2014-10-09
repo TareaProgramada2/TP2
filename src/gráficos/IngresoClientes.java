@@ -18,6 +18,7 @@ public class IngresoClientes extends javax.swing.JFrame {
     private String variableTipo;
     public baseDeDatos baseDat = new baseDeDatos();
     public Email email= new Email();
+    Persona cola = new Persona();
     
 
     
@@ -131,7 +132,7 @@ public class IngresoClientes extends javax.swing.JFrame {
                             .addComponent(RegistroTipodeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
+                                .addGap(74, 74, 74)
                                 .addComponent(ImagenNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(112, 112, 112))))
         );
@@ -209,6 +210,21 @@ public class IngresoClientes extends javax.swing.JFrame {
             email.enviarEmail();
         } catch (MessagingException ex) {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (Integer.parseInt(variableTipo) == 1){
+            cola.entrarDiscapacitados(aux);
+        }
+        else if (Integer.parseInt(variableTipo) == 2){
+            cola.entrarAdultos(aux);
+        }
+        else if (Integer.parseInt(variableTipo) == 3){
+            cola.entrarEmbarazadas(aux);
+        }
+        else if (Integer.parseInt(variableTipo) == 4){
+            cola.entrarCorpotarivos(aux);
+        }
+        else if (Integer.parseInt(variableTipo) == 5){
+            cola.entrarRegulares(aux);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -470,42 +470,34 @@ public class Graficoss extends javax.swing.JFrame {
                 if (OpciondeBarras.isSelected()){
                     //GRAFICO DE BARRAS
                     DefaultCategoryDataset data=new DefaultCategoryDataset();
-                    String producto1 = "Persona con discapacidad";
-                    String producto2="Adulto mayor";
-                    String producto3="Mujer embarazada";
-                    String producto4="Cliente corporativo";
-                    String producto5="Cliente regular";
+                    String producto1 = "7 a.m a 8 a.m";
+                    String producto2="8a.m a 9a.m";
+                    String producto3="9a.m a 10a.m";
+                    String producto4="11a.m a 12 m.d";
+                    String producto5="1 p.m a 2 p.m";
+                    String producto6="2p.m a 3p.m";
+                    String producto7="4p.m a 5p.m";
 
 
                     String dia1="Tipo";
 
 
-                    data.addValue(18, producto1, dia1);
-                    data.addValue(10, producto1, dia1);
-                    data.addValue(27, producto1, dia1);
-                    data.addValue(1, producto1, dia1);
-
-                    data.addValue(7, producto2, dia1);
-                    data.addValue(8, producto2, dia1);
-                    data.addValue(18, producto2, dia1);
+                    
+                    data.addValue(15, producto1, dia1);
+                 
                     data.addValue(2, producto2, dia1);
-
-                    data.addValue(2, producto3, dia1);
-                    data.addValue(8, producto3, dia1);
-                    data.addValue(1, producto3, dia1);
+                   
                     data.addValue(5, producto3, dia1);
-
-                    data.addValue(7, producto4, dia1);
-                    data.addValue(8, producto4, dia1);
-                    data.addValue(18, producto4, dia1);
+                  
                     data.addValue(2, producto4, dia1);
-
-                    data.addValue(7, producto5, dia1);
-                    data.addValue(3, producto5, dia1);
-                    data.addValue(8, producto5, dia1);
+                    
                     data.addValue(12, producto5, dia1);
+                    
+                    data.addValue(14, producto6, dia1);
+                    
+                    data.addValue(29, producto7, dia1);
 
-                    chart=ChartFactory.createBarChart("Gráfico de barras", "Hora", "lalalala", data, PlotOrientation.HORIZONTAL, true, true, true);
+                    chart=ChartFactory.createBarChart("Gráfico de barras", "Hora", "", data, PlotOrientation.HORIZONTAL, true, true, true);
                     CategoryPlot plot = (CategoryPlot) chart.getPlot();
                     plot.setDomainGridlinesVisible(false);
 
@@ -519,11 +511,14 @@ public class Graficoss extends javax.swing.JFrame {
                             //GRAFICO DE PASTEL  
 
                         DefaultPieDataset data =new DefaultPieDataset();
-                        data.setValue("Persona con discapacidad", 30);
-                        data.setValue("Adulto mayor", 10);
-                        data.setValue("Mujer embarazada", 20);
-                        data.setValue("Cliente corporativo",15 );
-                        data.setValue("Cliente regular", 25);
+                        data.setValue("7a.m a 8a.m", 30);
+                        data.setValue("8a.m a 9a.m", 10);
+                        data.setValue("10a.m a 11a.m", 20);
+                        data.setValue("11a.m a 12m.d",15 );
+                        data.setValue("12 m.d a 1p.m", 25);
+                        data.setValue("1p.m a 2p.m", 25);
+                        data.setValue("3p.m a 4p.m", 25);
+                        data.setValue("4p.m a 5p.m", 25);
 
                         chart = ChartFactory.createPieChart3D("Grafico Hora", data, true, true, false);
 

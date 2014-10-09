@@ -25,6 +25,7 @@ public class Email {
 	Properties propiedadesDelEmail;
 	Session sessionUsuarioEmail;
 	MimeMessage mensaje;
+        String rutaImagen = "";
         baseDeDatos hora = new baseDeDatos(); 
 
 	public void cambioDePropiedadesDeCorreo() 
@@ -45,7 +46,7 @@ public class Email {
                 BodyPart texto = new MimeBodyPart();
                 texto.setText(mensaj+hora.getHora());
                 BodyPart adjunto = new MimeBodyPart();
-                adjunto.setDataHandler(new DataHandler(new FileDataSource("/home/andres/Imágenes/Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg")));
+                adjunto.setDataHandler(new DataHandler(new FileDataSource(rutaImagen)));
                 adjunto.setFileName("Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg");
                 
                 multiParte.addBodyPart(texto);

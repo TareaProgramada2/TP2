@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import gráficos.baseDeDatos;
+import gráficos.Email;
 //ejkrjf
 //dhjshdjhs
 
@@ -18,6 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String rutaimagen;
     public static String variable2;
     baseDeDatos a = new baseDeDatos();
+    Email rutaLogo = new Email();
     
     public VentanaPrincipal() {
         initComponents();
@@ -184,7 +186,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Logo.setIcon(newicono);
             Logo.setSize(200,200);   
         }
-        
+        rutaLogo.rutaImagen = rutaimagen;
         
             try{
                 a.almacenarnNombreyLogo(variable2, rutaimagen);

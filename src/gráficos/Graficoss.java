@@ -405,29 +405,19 @@ public class Graficoss extends javax.swing.JFrame {
 
                 String dia1 = "Tipo";
 
-                data.addValue(18, producto1, dia1);
-                data.addValue(10, producto1, dia1);
-                data.addValue(6, producto1, dia1);
-                data.addValue(1, producto1, dia1);
+                
+                data.addValue(50, producto1, dia1);
 
-                data.addValue(7, producto2, dia1);
-                data.addValue(8, producto2, dia1);
-                data.addValue(18, producto2, dia1);
+              
                 data.addValue(2, producto2, dia1);
 
-                data.addValue(2, producto3, dia1);
-                data.addValue(8, producto3, dia1);
-                data.addValue(1, producto3, dia1);
+              
                 data.addValue(5, producto3, dia1);
 
-                data.addValue(7, producto4, dia1);
-                data.addValue(8, producto4, dia1);
-                data.addValue(18, producto4, dia1);
+               
                 data.addValue(2, producto4, dia1);
 
-                data.addValue(7, producto5, dia1);
-                data.addValue(3, producto5, dia1);
-                data.addValue(8, producto5, dia1);
+              
                 data.addValue(12, producto5, dia1);
 
                 chart = ChartFactory.createBarChart("Gráfico de barras", "Tipo", "Cantidad", data, PlotOrientation.HORIZONTAL, true, true, true);
@@ -492,7 +482,7 @@ public class Graficoss extends javax.swing.JFrame {
 
                     data.addValue(18, producto1, dia1);
                     data.addValue(10, producto1, dia1);
-                    data.addValue(6, producto1, dia1);
+                    data.addValue(27, producto1, dia1);
                     data.addValue(1, producto1, dia1);
 
                     data.addValue(7, producto2, dia1);

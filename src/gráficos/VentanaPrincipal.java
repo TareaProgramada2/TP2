@@ -20,6 +20,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     baseDeDatos a = new baseDeDatos();
     
     
+    
     public VentanaPrincipal() {
         initComponents();
         rutaimagen="";
@@ -30,6 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         BotonCambiarLogo = new javax.swing.JButton();
         BotonCambiarNombre = new javax.swing.JButton();
@@ -40,6 +42,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -261,6 +265,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     public javax.swing.JLabel NuevoNombre;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

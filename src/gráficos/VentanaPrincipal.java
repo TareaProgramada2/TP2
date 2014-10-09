@@ -21,6 +21,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     baseDeDatos a = new baseDeDatos();
     Email rutaLogo = new Email();
     
+    
     public VentanaPrincipal() {
         initComponents();
         rutaimagen="";

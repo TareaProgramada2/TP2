@@ -18,6 +18,7 @@ public class baseDeDatos
     public int Dia;
     public int Mes;
     public int Año;
+    String [] NyL = new String [3];
     
     public String getHora()
     {
@@ -51,12 +52,84 @@ public class baseDeDatos
         this.impresorDeArchibos = null;
     }
     
-    public void leerFicheros() throws FileNotFoundException, IOException
+    public void leerFicherosClientes() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/cliente.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
     
+    public void leerFicherosHoraAtencion() throws FileNotFoundException, IOException
+    {        
+        this.fichero = new File ("src/base de datos/atendidos.txt");
+        this.lectorDeFichero = new FileReader (this.fichero);
+    }
+    
+    public void leerFicherosNombreLogo() throws FileNotFoundException, IOException
+    {        
+        this.fichero = new File ("src/base de datos/nombreYlogo.txt");
+        this.lectorDeFichero = new FileReader (this.fichero);
+    }
+    
+    public void listaNombreLogo() throws IOException
+    {
+        this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        String linea = "";
+        int aux=0;
+        while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
+        {
+            char[] arregloLinea = linea.toCharArray();
+            linea="";
+            for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
+            {
+                
+                if(arregloLinea[ind]=='#')
+                {
+                    break;
+                }
+                if(arregloLinea[ind] != ',')
+                {
+                    linea = linea + arregloLinea[ind] + "";
+                }
+                else
+                {
+                    this.NyL[aux]=(linea);
+                    linea="";
+                    aux++;
+                }    
+            }
+        }
+        this.lectorDeFichero.close();
+        char[] arregloLinea = this.NyL[1].toCharArray();
+            linea="";
+        
+        for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
+        {
+                
+            if(arregloLinea[ind]=='.')
+            {
+                linea = linea + ".jpg";
+                this.NyL[aux]=(linea);
+                break;
+            }
+            if(arregloLinea[ind] != '/')
+            {
+                linea = linea + arregloLinea[ind] + "";
+            }
+            else
+            {
+                linea="";
+            }
+        }    
+    }
+    
+    public String getRutLogo()
+    {
+        return this.NyL[1];
+    }
+    String getLogo()
+    {
+        return this.NyL[2];
+    }
     public void listaDeDatos() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
@@ -112,7 +185,7 @@ public class baseDeDatos
     {
         getFecha();
         getHora();
-        this.escritorDeArchivos = new FileWriter("src/base de datos/6.txt",true);
+        this.escritorDeArchivos = new FileWriter("src/base de datos/atendidos.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println( dato +this.Hora+":"+this.Minutos+","+this.Dia+"/"+this.Mes+"/"+this.Año+",#");
         this.escritorDeArchivos.close();

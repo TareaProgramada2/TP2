@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 
 
 public class IngresoClientes extends javax.swing.JFrame {
@@ -200,6 +201,8 @@ public class IngresoClientes extends javax.swing.JFrame {
         try {
             email.email(variablecorreo, "estimado cliente su registro en el banco fue a la hora: ");
         } catch (MessagingException ex) {
+            Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {

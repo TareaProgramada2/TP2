@@ -123,7 +123,7 @@ public class Tabla extends JFrame{
     
     
     Tabla() throws IOException{
-        a.leerFicheros();
+        a.leerFicherosClientes();
         a.listaDeDatos();
         String Matriz[][]= a.getDatos();
         

@@ -145,11 +145,11 @@ public class Graficoss extends javax.swing.JFrame {
         PastelDia.setLayout(PastelDiaLayout);
         PastelDiaLayout.setHorizontalGroup(
             PastelDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
+            .addGap(0, 835, Short.MAX_VALUE)
         );
         PastelDiaLayout.setVerticalGroup(
             PastelDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 389, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
         );
 
         Pastel.setBackground(new java.awt.Color(0, 153, 153));
@@ -159,11 +159,11 @@ public class Graficoss extends javax.swing.JFrame {
         Pastel.setLayout(PastelLayout);
         PastelLayout.setHorizontalGroup(
             PastelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
+            .addGap(0, 853, Short.MAX_VALUE)
         );
         PastelLayout.setVerticalGroup(
             PastelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 516, Short.MAX_VALUE)
         );
 
         Barras.setBackground(new java.awt.Color(0, 153, 153));
@@ -172,11 +172,11 @@ public class Graficoss extends javax.swing.JFrame {
         Barras.setLayout(BarrasLayout);
         BarrasLayout.setHorizontalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 861, Short.MAX_VALUE)
         );
         BarrasLayout.setVerticalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
         BarrasHora.setBackground(new java.awt.Color(0, 153, 153));
@@ -190,7 +190,7 @@ public class Graficoss extends javax.swing.JFrame {
         );
         BarrasHoraLayout.setVerticalGroup(
             BarrasHoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 467, Short.MAX_VALUE)
         );
 
         PastelHora.setBackground(new java.awt.Color(0, 153, 153));
@@ -200,19 +200,19 @@ public class Graficoss extends javax.swing.JFrame {
         PastelHora.setLayout(PastelHoraLayout);
         PastelHoraLayout.setHorizontalGroup(
             PastelHoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 555, Short.MAX_VALUE)
+            .addGap(0, 825, Short.MAX_VALUE)
         );
         PastelHoraLayout.setVerticalGroup(
             PastelHoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout capasLayout = new javax.swing.GroupLayout(capas);
         capas.setLayout(capasLayout);
         capasLayout.setHorizontalGroup(
             capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(capasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capasLayout.createSequentialGroup()
+                .addGap(0, 40, Short.MAX_VALUE)
                 .addComponent(Barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
@@ -220,15 +220,15 @@ public class Graficoss extends javax.swing.JFrame {
                     .addComponent(BarrasDia, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(86, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capasLayout.createSequentialGroup()
-                    .addContainerGap(176, Short.MAX_VALUE)
-                    .addComponent(PastelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(184, Short.MAX_VALUE)))
+                .addGroup(capasLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PastelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(54, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
                     .addGap(25, 25, 25)
-                    .addComponent(Pastel, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(335, Short.MAX_VALUE)))
+                    .addComponent(Pastel, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(23, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
                     .addContainerGap()
@@ -237,14 +237,14 @@ public class Graficoss extends javax.swing.JFrame {
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PastelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(334, Short.MAX_VALUE)))
+                    .addComponent(PastelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(64, Short.MAX_VALUE)))
         );
         capasLayout.setVerticalGroup(
             capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(capasLayout.createSequentialGroup()
                 .addComponent(Barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 158, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
                     .addContainerGap()
@@ -252,20 +252,21 @@ public class Graficoss extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
-                    .addComponent(PastelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addComponent(PastelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 46, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
-                    .addComponent(Pastel, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 23, Short.MAX_VALUE)))
+                    .addComponent(Pastel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 25, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
-                    .addComponent(BarrasHora, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 35, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(BarrasHora, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(125, Short.MAX_VALUE)))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
-                    .addComponent(PastelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 31, Short.MAX_VALUE)))
+                    .addComponent(PastelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 58, Short.MAX_VALUE)))
         );
         capas.setLayer(BarrasDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         capas.setLayer(PastelDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -333,8 +334,8 @@ public class Graficoss extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ImagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         PanelPrincLayout.setVerticalGroup(
             PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,7 +344,6 @@ public class Graficoss extends javax.swing.JFrame {
                 .addComponent(NuevoNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelPrincLayout.createSequentialGroup()
                         .addComponent(ImagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -361,7 +361,10 @@ public class Graficoss extends javax.swing.JFrame {
                             .addComponent(OpciondeBarras)
                             .addComponent(OpciondePastel))
                         .addGap(18, 18, 18)
-                        .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelPrincLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -639,11 +642,37 @@ public class Graficoss extends javax.swing.JFrame {
                                 //GRAFICO DE PASTEL  
 
                             DefaultPieDataset data =new DefaultPieDataset();
-                            data.setValue("Persona con discapacidad", 30);
-                            data.setValue("Adulto mayor", 10);
-                            data.setValue("Mujer embarazada", 20);
-                            data.setValue("Cliente corporativo",15 );
-                            data.setValue("Cliente regular", 25);
+                            data.setValue("Día 1", 30);
+                            data.setValue("Día 2", 10);
+                            data.setValue("Día 3", 20);
+                            data.setValue("Día 4",15 );
+                            data.setValue("Día 5", 25);
+                            data.setValue("Día 6", 25);
+                            data.setValue("Día 7", 25);
+                            data.setValue("Día 8", 25);
+                            data.setValue("Día 9", 25);
+                            data.setValue("Día 10", 25);
+                            data.setValue("Día 11", 25);
+                            data.setValue("Día 12", 25);
+                            data.setValue("Día 13", 25);
+                            data.setValue("Día 14", 25);
+                            data.setValue("Día 15", 25);
+                            data.setValue("Día 16", 25);
+                            data.setValue("Día 17", 25);
+                            data.setValue("Día 18", 25);
+                            data.setValue("Día 19", 25);
+                            data.setValue("Día 20", 25);
+                            data.setValue("Día 21", 25);
+                            data.setValue("Día 22", 25);
+                            data.setValue("Día 23", 25);
+                            data.setValue("Día 24", 25);
+                            data.setValue("Día 25", 25);
+                            data.setValue("Día 26", 25);
+                            data.setValue("Día 27", 25);
+                            data.setValue("Día 28", 25);
+                            data.setValue("Día 29", 25);
+                            data.setValue("Día 30", 25);
+                            data.setValue("Día 31", 25);
 
                             chart = ChartFactory.createPieChart3D("Grafico Dia", data, true, true, false);
 
@@ -651,6 +680,8 @@ public class Graficoss extends javax.swing.JFrame {
 
 
                         }
+                        
+                        
                     }
                     panel = new ChartPanel(chart);
                     panel.setBounds(1, 2, 800, 500);

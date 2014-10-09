@@ -1,27 +1,6 @@
 jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
 antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
-null,null,null,16:0,8/10/2014,#
-dani,dani@gmail.com,3,16:7,8/10/2014,#
-daniSolis,danisolical@hotmail.com,5,16:28,8/10/2014,#
-dani,danisolical@hotmail.com,5,16:30,8/10/2014,#
-jenjcna,danisolical@hotmail.com,5,16:32,8/10/2014,#
-dani,danisolical@gmail.com,5,16:37,8/10/2014,#
-dani,danisolical@hotmail.com,5,16:39,8/10/2014,#
-andrespato,andrespato1@gmail.com,1,16:41,8/10/2014,#
-dani,danisolical@hotmail.com,5,16:39,8/10/2014,#
-dani,danisolical@hotmail.com,5,16:39,8/10/2014,#
-dani,danisolical@hotmail.com,5,16:39,8/10/2014,#
+dani,danisolical@hotmail.com,5,17:55,8/10/2014,#
+dani,danisolical@hotmail.com,4,19:23,8/10/2014,#
+kenneth,kennfamo@gmail.com,1,19:26,8/10/2014,#
+kenneth,kennfamo@gmail.com,1,19:26,8/10/2014,#

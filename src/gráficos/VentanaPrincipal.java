@@ -1,5 +1,3 @@
-
-
 package gráficos;
 
 import java.awt.Image;
@@ -10,6 +8,8 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import gráficos.baseDeDatos;
 import gráficos.Email;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //ejkrjf
 //dhjshdjhs
 
@@ -19,6 +19,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String rutaimagen;
     public static String variable2;
     baseDeDatos a = new baseDeDatos();
+    public int cajeros;
+    
+    public String getLogo() throws IOException{
+        a.leerFicherosNombreLogo();
+        a.listaNombreLogo();
+        return a.NyL[2];
+    }
     
     
     
@@ -41,7 +48,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         NuevoNombre = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TxtCajeros = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
@@ -81,9 +88,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jLabel2.setText("Cantidad de cajas:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TxtCajeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TxtCajerosActionPerformed(evt);
             }
         });
 
@@ -106,7 +113,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
-                        .addContainerGap(131, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -115,7 +122,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TxtCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -146,7 +153,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
@@ -198,8 +205,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }catch(IOException e){
                 System.err.println("No se creo el archivo");
             }
-        
-
     }//GEN-LAST:event_BotonCambiarLogoActionPerformed
 
     private void BotonCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarNombreActionPerformed
@@ -211,9 +216,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LabelParaCambiarNombActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TxtCajerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCajerosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TxtCajerosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         SegundaVentana ventana2=new SegundaVentana();
@@ -254,24 +259,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                VentanaPrincipal f = new VentanaPrincipal();
+                String r;
+                try{
+                    r = f.getLogo();
+                    new SegundaVentana().setVisible(true);
+                    f.setVisible(false);
+                }
+                catch(NullPointerException ex){
+                    f.setVisible(true);
+                    } catch (IOException ex) {
+                    Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+           
             }
-        });
+    });    
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCambiarLogo;
     private javax.swing.JButton BotonCambiarNombre;
     private javax.swing.JTextField LabelParaCambiarNomb;
     private javax.swing.JLabel Logo;
     public javax.swing.JLabel NuevoNombre;
+    private javax.swing.JTextField TxtCajeros;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-    public static String variable;
-    
+    public static String variable;   
 }

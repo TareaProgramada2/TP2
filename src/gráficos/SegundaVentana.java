@@ -34,7 +34,7 @@ public class SegundaVentana extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        BotonRegistrarCliente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         Botongraficos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -47,11 +47,11 @@ public class SegundaVentana extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jButton1.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
-        jButton1.setText("Registrar cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonRegistrarCliente.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
+        BotonRegistrarCliente.setText("Registrar cliente");
+        BotonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonRegistrarClienteActionPerformed(evt);
             }
         });
 
@@ -91,7 +91,7 @@ public class SegundaVentana extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2)
-                            .addComponent(jButton1)
+                            .addComponent(BotonRegistrarCliente)
                             .addComponent(jButton3)
                             .addComponent(Botongraficos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,7 +113,7 @@ public class SegundaVentana extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jButton1)
+                                .addComponent(BotonRegistrarCliente)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -150,10 +150,11 @@ public class SegundaVentana extends javax.swing.JFrame {
         grafico.setVisible(true);
     }//GEN-LAST:event_BotongraficosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
+        IngresoClientes ingreso=new IngresoClientes();
+        ingreso.setVisible(true);
         
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonRegistrarClienteActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Table tabla;
@@ -202,11 +203,11 @@ public class SegundaVentana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonRegistrarCliente;
     private javax.swing.JButton Botongraficos;
     private javax.swing.JLabel NuevaImagen;
     private javax.swing.JLabel NuevoNombre;
     private javax.swing.JTextArea TXTCajeros;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;

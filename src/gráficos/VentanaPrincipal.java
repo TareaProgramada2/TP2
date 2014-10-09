@@ -19,6 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String variable2;
     baseDeDatos a = new baseDeDatos();
     
+    
     public VentanaPrincipal() {
         initComponents();
         rutaimagen="";

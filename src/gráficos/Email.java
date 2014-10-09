@@ -20,6 +20,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+
 public class Email {
 
 	Properties propiedadesDelEmail;
@@ -45,8 +46,8 @@ public class Email {
                 BodyPart texto = new MimeBodyPart();
                 texto.setText(mensaj+hora.getHora());
                 BodyPart adjunto = new MimeBodyPart();
-                adjunto.setDataHandler(new DataHandler(new FileDataSource("/home/andres/Imágenes/Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg")));
-                adjunto.setFileName("Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg");
+                adjunto.setDataHandler(new DataHandler(new FileDataSource()));
+                adjunto.setFileName();
                 
                 multiParte.addBodyPart(texto);
                 multiParte.addBodyPart(adjunto);

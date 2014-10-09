@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import gráficos.baseDeDatos;
+import gráficos.Email;
 //ejkrjf
 //dhjshdjhs
 

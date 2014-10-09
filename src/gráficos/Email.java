@@ -19,14 +19,15 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
+import gráficos.baseDeDatos;
+import java.io.IOException;
 
 public class Email {
 
 	Properties propiedadesDelEmail;
 	Session sessionUsuarioEmail;
 	MimeMessage mensaje;
-        baseDeDatos hora = new baseDeDatos(); 
+        baseDeDatos BD = new baseDeDatos(); 
 
 	public void cambioDePropiedadesDeCorreo() 
         {
@@ -39,15 +40,22 @@ public class Email {
         
 
 	public void email(String email, String mensaj) throws AddressException,
-			MessagingException {
+			MessagingException,
+			IOException {
+                BD.leerFicherosNombreLogo();
+                BD.listaNombreLogo();
+                String logo,rut;
+                logo= BD.getLogo();
+                rut = BD.getRutLogo();
                 MimeMultipart multiParte = new MimeMultipart();
 		String[] toEmails = { email };
 		String emailSubject = "Bank";
                 BodyPart texto = new MimeBodyPart();
-                texto.setText(mensaj+hora.getHora());
+                texto.setText(mensaj+BD.getHora());
                 BodyPart adjunto = new MimeBodyPart();
-                adjunto.setDataHandler(new DataHandler(new FileDataSource()));
-                adjunto.setFileName();
+                adjunto.setDataHandler(new DataHandler(new FileDataSource(rut)));
+                adjunto.setFileName(logo);
+
                 
                 multiParte.addBodyPart(texto);
                 multiParte.addBodyPart(adjunto);

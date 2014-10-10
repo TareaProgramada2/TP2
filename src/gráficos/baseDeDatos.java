@@ -198,8 +198,5 @@ public class baseDeDatos
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");
         this.escritorDeArchivos.close();
-    }
-    
+    }   
 }
-    
-

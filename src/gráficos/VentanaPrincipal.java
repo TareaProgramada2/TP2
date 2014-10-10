@@ -24,7 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public String getLogo() throws IOException{
         a.leerFicherosNombreLogo();
         a.listaNombreLogo();
-        return a.NyL[2];
+        return a.generica[2];
     }
     
     

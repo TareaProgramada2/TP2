@@ -122,19 +122,11 @@ public class baseDeDatos
         }    
     }
     
-    public String getRutLogo()
-    {
-        return this.generica[1];
-    }
-    String getLogo()
-    {
-        return this.generica[2];
-    }
-    public void listaDeDatos() throws IOException
+    public void listaParaGraficosPorPrioridad() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";
-        
+        int aux=0;
         while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
         {
             char[] arregloLinea = linea.toCharArray();
@@ -152,12 +144,64 @@ public class baseDeDatos
                 }
                 else
                 {
-                    this.matrizClientes.add(linea);
+                    this.generica[aux]=(linea);
                     linea="";
+                    aux++;
                 }    
             }
         }
         this.lectorDeFichero.close();
+            
+    }
+    
+    
+    public String getRutLogo()
+    {
+        return this.generica[1];
+    }
+    String getLogo()
+    {
+        return this.generica[2];
+    }
+    public int[] listaDeDatos() throws IOException
+    {
+        this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        String linea = "";
+        int[] datos= new int[5];
+        int a,b,c,d,e;
+        a=b=c=d=e=0;
+        while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
+        {
+            char[] arregloLinea = linea.toCharArray();
+            linea="";
+            if(arregloLinea[0]=='1')
+            {
+                a++;
+            }
+            else if(arregloLinea[0]=='2')
+            {
+                b++;
+            }
+            else if(arregloLinea[0]=='3')
+            {
+                c++;
+            }
+            else if(arregloLinea[0]=='4')
+            {
+                d++;
+            }
+            else if(arregloLinea[0]=='5')
+            {
+                e++;
+            }
+        }
+        datos[0]=a;
+        datos[1]=b;
+        datos[2]=c;
+        datos[3]=d;
+        datos[4]=e;
+        this.lectorDeFichero.close();
+        return datos;
     }
     
     public String[][] getDatos()
@@ -192,8 +236,6 @@ public class baseDeDatos
     }
     public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
     {
-        getFecha();
-        getHora();
         this.escritorDeArchivos = new FileWriter("src/base de datos/nombreYlogo.txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");

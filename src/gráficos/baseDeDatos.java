@@ -18,7 +18,7 @@ public class baseDeDatos
     public int Dia;
     public int Mes;
     public int Año;
-    String [] NyL = new String [3];
+    String [] generica = new String [8];
     
     public String getHora()
     {
@@ -92,14 +92,14 @@ public class baseDeDatos
                 }
                 else
                 {
-                    this.NyL[aux]=(linea);
+                    this.generica[aux]=(linea);
                     linea="";
                     aux++;
                 }    
             }
         }
         this.lectorDeFichero.close();
-        char[] arregloLinea = this.NyL[1].toCharArray();
+        char[] arregloLinea = this.generica[1].toCharArray();
             linea="";
         
         for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
@@ -108,7 +108,7 @@ public class baseDeDatos
             if(arregloLinea[ind]=='.')
             {
                 linea = linea + ".jpg";
-                this.NyL[aux]=(linea);
+                this.generica[aux]=(linea);
                 break;
             }
             if(arregloLinea[ind] != '/')
@@ -124,11 +124,11 @@ public class baseDeDatos
     
     public String getRutLogo()
     {
-        return this.NyL[1];
+        return this.generica[1];
     }
     String getLogo()
     {
-        return this.NyL[2];
+        return this.generica[2];
     }
     public void listaDeDatos() throws IOException
     {
@@ -183,11 +183,11 @@ public class baseDeDatos
     
     public void almacenarFicherosHoraAtencion(String dato) throws IOException
     {
-        getFecha();
-        getHora();
+        String aux= dato+","+getFecha();
+        aux= aux+","+getHora()+",#";
         this.escritorDeArchivos = new FileWriter("src/base de datos/atendidos.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        this.impresorDeArchibos.println( dato +this.Hora+":"+this.Minutos+","+this.Dia+"/"+this.Mes+"/"+this.Año+",#");
+        this.impresorDeArchibos.println( aux );
         this.escritorDeArchivos.close();
     }
     public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
@@ -198,8 +198,5 @@ public class baseDeDatos
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");
         this.escritorDeArchivos.close();
-    }
-    
+    }   
 }
-    
-

@@ -452,6 +452,7 @@ public class Graficoss extends javax.swing.JFrame {
         else {
                 if (OpciondePastel.isSelected()) {
 
+
                     Pastel.setVisible(true);
                     Barras.setVisible(false);
                     PastelDia.setVisible(false);
@@ -472,6 +473,19 @@ public class Graficoss extends javax.swing.JFrame {
                         Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
+
+
+                    try {
+                        //GRAFICO DE PASTEL
+                        lista.leerFicherosHoraAtencion();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        graf= lista.listaParaGraficosPorPrioridad();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 
                     DefaultPieDataset data = new DefaultPieDataset();
                     data.setValue("Persona con discapacidad", graf[0]);

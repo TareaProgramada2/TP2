@@ -3,6 +3,8 @@ package gráficos;
 import gráficos.Email;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.MessagingException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -392,11 +394,23 @@ public class Graficoss extends javax.swing.JFrame {
 
     private void BotonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGraficarActionPerformed
         ChartPanel panel;
+        baseDeDatos lista = new baseDeDatos();
+        int [] graf = new int[31];
 
         JFreeChart chart=null;
         if (OpcionTipo.isSelected()){
             if (OpciondeBarras.isSelected()) {
                 //GRAFICO DE BARRAS
+                try {
+                    lista.leerFicherosHoraAtencion();
+                } catch (IOException ex) {
+                    Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    graf = lista.listaParaGraficosPorPrioridad();
+                } catch (IOException ex) {
+                    Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 DefaultCategoryDataset data = new DefaultCategoryDataset();
 
                 String producto1 = "Persona con discapacidad";
@@ -408,19 +422,19 @@ public class Graficoss extends javax.swing.JFrame {
                 String dia1 = "Tipo";
 
                 
-                data.addValue(50, producto1, dia1);
+                data.addValue(graf[0], producto1, dia1);
 
               
-                data.addValue(2, producto2, dia1);
+                data.addValue(graf[1], producto2, dia1);
 
               
-                data.addValue(5, producto3, dia1);
+                data.addValue(graf[2], producto3, dia1);
 
                
-                data.addValue(2, producto4, dia1);
+                data.addValue(graf[3], producto4, dia1);
 
               
-                data.addValue(12, producto5, dia1);
+                data.addValue(graf[4], producto5, dia1);
 
                 chart = ChartFactory.createBarChart("Gráfico de barras", "Tipo", "Cantidad", data, PlotOrientation.HORIZONTAL, true, true, true);
                 CategoryPlot plot = (CategoryPlot) chart.getPlot();

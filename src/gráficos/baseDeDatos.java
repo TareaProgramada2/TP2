@@ -122,7 +122,7 @@ public class baseDeDatos
         }    
     }
     
-    public void listaParaGraficosPorPrioridad() throws IOException
+    public void lis() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";
@@ -163,7 +163,7 @@ public class baseDeDatos
     {
         return this.generica[2];
     }
-    public int[] listaDeDatos() throws IOException
+    public int[] listaParaGraficosPorPrioridad() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";

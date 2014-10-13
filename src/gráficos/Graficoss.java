@@ -20,9 +20,9 @@ import org.jfree.data.xy.*;
 
 
 
-//jdsdjs
 
 
+//ajsxjksa
 
 
 public class Graficoss extends javax.swing.JFrame {
@@ -451,6 +451,7 @@ public class Graficoss extends javax.swing.JFrame {
         
         else {
                 if (OpciondePastel.isSelected()) {
+
                     Pastel.setVisible(true);
                     Barras.setVisible(false);
                     PastelDia.setVisible(false);
@@ -458,12 +459,26 @@ public class Graficoss extends javax.swing.JFrame {
                     PastelHora.setVisible(false);
                     BarrasHora.setVisible(false);
                     //GRAFICO DE PASTEL  
+
+                    try {
+                        //GRAFICO DE PASTEL
+                        lista.leerFicherosHoraAtencion();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        graf= lista.listaParaGraficosPorPrioridad();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+
                     DefaultPieDataset data = new DefaultPieDataset();
-                    data.setValue("Persona con discapacidad", 30);
-                    data.setValue("Adulto mayor", 10);
-                    data.setValue("Mujer embarazada", 20);
-                    data.setValue("Cliente corporativo", 15);
-                    data.setValue("Cliente regular", 25);
+                    data.setValue("Persona con discapacidad", graf[0]);
+                    data.setValue("Adulto mayor", graf[1]);
+                    data.setValue("Mujer embarazada", graf[2]);
+                    data.setValue("Cliente corporativo", graf[3]);
+                    data.setValue("Cliente regular", graf[4]);
 
 
 

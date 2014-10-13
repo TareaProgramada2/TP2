@@ -174,7 +174,7 @@ public class Graficoss extends javax.swing.JFrame {
         Barras.setLayout(BarrasLayout);
         BarrasLayout.setHorizontalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+            .addGap(0, 879, Short.MAX_VALUE)
         );
         BarrasLayout.setVerticalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +214,7 @@ public class Graficoss extends javax.swing.JFrame {
         capasLayout.setHorizontalGroup(
             capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capasLayout.createSequentialGroup()
-                .addGap(0, 40, Short.MAX_VALUE)
+                .addGap(0, 22, Short.MAX_VALUE)
                 .addComponent(Barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
@@ -400,6 +400,13 @@ public class Graficoss extends javax.swing.JFrame {
         JFreeChart chart=null;
         if (OpcionTipo.isSelected()){
             if (OpciondeBarras.isSelected()) {
+                Barras.setVisible(true);
+                Pastel.setVisible(false);
+                PastelDia.setVisible(false);
+                BarrasDia.setVisible(false);
+                PastelHora.setVisible(false);
+                BarrasHora.setVisible(false);
+                
                 //GRAFICO DE BARRAS
                 try {
                     lista.leerFicherosHoraAtencion();
@@ -444,6 +451,12 @@ public class Graficoss extends javax.swing.JFrame {
         
         else {
                 if (OpciondePastel.isSelected()) {
+                    Pastel.setVisible(true);
+                    Barras.setVisible(false);
+                    PastelDia.setVisible(false);
+                    BarrasDia.setVisible(false);
+                    PastelHora.setVisible(false);
+                    BarrasHora.setVisible(false);
                     //GRAFICO DE PASTEL  
                     DefaultPieDataset data = new DefaultPieDataset();
                     data.setValue("Persona con discapacidad", 30);
@@ -484,6 +497,12 @@ public class Graficoss extends javax.swing.JFrame {
         else{
             if(OpcionHora.isSelected()){
                 if (OpciondeBarras.isSelected()){
+                    BarrasHora.setVisible(true);
+                    Barras.setVisible(false);
+                    PastelDia.setVisible(false);
+                    BarrasDia.setVisible(false);
+                    PastelHora.setVisible(false);
+                    Pastel.setVisible(false);
                     //GRAFICO DE BARRAS
                     DefaultCategoryDataset data=new DefaultCategoryDataset();
                     String producto1 = "7 a.m a 8 a.m";
@@ -524,6 +543,12 @@ public class Graficoss extends javax.swing.JFrame {
                 }
                 else{
                     if (OpciondePastel.isSelected()){
+                        PastelHora.setVisible(true);
+                        Barras.setVisible(false);
+                        PastelDia.setVisible(false);
+                        BarrasDia.setVisible(false);
+                        Pastel.setVisible(false);
+                        BarrasHora.setVisible(false);
                             //GRAFICO DE PASTEL  
 
                         DefaultPieDataset data =new DefaultPieDataset();
@@ -566,6 +591,12 @@ public class Graficoss extends javax.swing.JFrame {
             else{
                 if(OpcionDia.isSelected()){
                     if (OpciondeBarras.isSelected()){
+                        BarrasDia.setVisible(true);
+                        Barras.setVisible(false);
+                        PastelDia.setVisible(false);
+                        BarrasHora.setVisible(false);
+                        PastelHora.setVisible(false);
+                        Pastel.setVisible(false);
                         //GRAFICO DE BARRAS
                         DefaultCategoryDataset data=new DefaultCategoryDataset();
 
@@ -653,6 +684,12 @@ public class Graficoss extends javax.swing.JFrame {
                     }
                     else{
                         if (OpciondePastel.isSelected()){
+                            PastelDia.setVisible(true);
+                            Barras.setVisible(false);
+                            Pastel.setVisible(false);
+                            BarrasDia.setVisible(false);
+                            PastelHora.setVisible(false);
+                            BarrasHora.setVisible(false);
                                 //GRAFICO DE PASTEL  
 
                             DefaultPieDataset data =new DefaultPieDataset();

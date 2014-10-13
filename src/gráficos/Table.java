@@ -199,7 +199,7 @@ public class Tabla extends JFrame{
     
     Tabla() throws IOException{
         a.leerFicherosClientes();
-        a.listaDeDatos();
+        a.listaDeDatosClientes();
         String Matriz[][]= a.getDatos();
         
         //Crea la tabla y agrega la matriz y los nobmbres de las columnas

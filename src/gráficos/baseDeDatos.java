@@ -204,6 +204,36 @@ public class baseDeDatos
         return datos;
     }
     
+     public void listaDeDatosClientes() throws IOException
+    {
+        this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        String linea = "";
+        
+        while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
+        {
+            char[] arregloLinea = linea.toCharArray();
+            linea="";
+            for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
+            {
+                
+                if(arregloLinea[ind]=='#')
+                {
+                    break;
+                }
+                if(arregloLinea[ind] != ',')
+                {
+                    linea = linea + arregloLinea[ind] + "";
+                }
+                else
+                {
+                    this.matrizClientes.add(linea);
+                    linea="";
+                }    
+            }
+        }
+        this.lectorDeFichero.close();
+    }
+     
     public String[][] getDatos()
     {
         return this.matrizClientes.getMatriz();

@@ -25,6 +25,9 @@ public class Table extends javax.swing.JFrame {
      */
     public Table() throws IOException {
         initComponents();
+        /**
+         * creo objeto Tabla para usarlo más adelante
+         */
         Tabla h = new Tabla();
     }
 
@@ -210,6 +213,9 @@ public class Tabla extends JFrame{
     
     
     Tabla() throws IOException{
+        /**
+//         * lee los archivos de texto en lo que se encuentran todos las datos 
+         */
         a.leerFicherosClientes();
         a.listaDeDatosClientes();
         String Matriz[][]= a.getDatos();

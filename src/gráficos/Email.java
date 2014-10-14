@@ -23,6 +23,9 @@ import gráficos.baseDeDatos;
 import java.io.IOException;
 
 public class Email {
+    /**
+     * atributos de la clase email
+     */
 
 	Properties propiedadesDelEmail;
 	Session sessionUsuarioEmail;
@@ -75,8 +78,7 @@ public class Email {
 
 	}
 
-	public void enviarEmail() throws AddressException, MessagingException {
-
+	public void enviarEmail() throws AddressException, MessagingException {                
 		String emailHost = "smtp.gmail.com";
 		String fromUser = "carnitasbrown";
 		String fromUserEmailPassword = "carnitas12345";

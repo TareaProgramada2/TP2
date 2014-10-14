@@ -221,10 +221,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void BotonCambiarLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarLogoActionPerformed
         JFileChooser dlg = new JFileChooser();
         dlg.setFileFilter(filter);
+        /**
+         * en este método se puede ver la ventana que abre los archivos en donde la persona puedo elegirlos
+         */
         
         int opcion= dlg.showOpenDialog(this);
         if(opcion==JFileChooser.APPROVE_OPTION){
             String file = dlg.getSelectedFile().getPath();
+            /**
+             * toma la ruta de la imagen
+             */
             rutaimagen=file;
             Logo.setIcon(new ImageIcon(file));
             ImageIcon icono=new ImageIcon(file); 
@@ -237,6 +243,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
             try{
+                /**
+                 * crea un objeto de bases de datos para aplicarle este metodo y obtener el texto del txt en donde se escriben el número de cajeros
+                 */
                 a.almacenarnNombreyLogo(variable2, rutaimagen);
                 a.almacenarCajas(TxtCajeros.getText());
                 

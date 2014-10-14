@@ -305,16 +305,26 @@ public class baseDeDatos
         return this.generica[2];
     }
     public int[] listaParaGraficosPorPrioridad() throws IOException
+            /**
+             * metodo para acceder a los datos del txt y usarlos en los gráficos
+             */
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";
         int[] datos= new int[5];
+        /**
+         * se crean 5 datos ya que son 5 prioridades, ese sera el tamaño máximo
+         */
         int a,b,c,d,e;
         a=b=c=d=e=0;
         while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
         {
             char[] arregloLinea = linea.toCharArray();
             linea="";
+            /**
+             * cada vez que encuentre una coincidencia la respectiva variable aumenta en uno para que se 
+             * muestre en los graficos
+             */
             if(arregloLinea[0]=='1')
             {
                 a++;
@@ -341,6 +351,9 @@ public class baseDeDatos
         datos[2]=c;
         datos[3]=d;
         datos[4]=e;
+        /**
+         * asignamos esto ara que sea más fácil de acceder en los gráficos
+         */
         this.lectorDeFichero.close();
         return datos;
     }
@@ -350,6 +363,10 @@ public class baseDeDatos
         String linea = "";
         int aux=0;
         int[] datos= new int[10];
+        /**
+        * se crean diez datos que son los que representan las diez horas diferentes
+        * cada vez que haya una hora, aumenta en uno la respectiva variable
+        */
         int hora;
         int a,b,c,d,e,f,g,h,i,j;
         a=b=c=d=e=f=g=h=i=j=0;
@@ -417,7 +434,10 @@ public class baseDeDatos
         datos[6]=g;
         datos[7]=h;
         datos[8]=i;
-        datos[9]=j;       
+        datos[9]=j; 
+        /**
+         * asignamos esto ara que sea más fácil de acceder en los gráficos
+         */
         this.lectorDeFichero.close();
         return datos;
     

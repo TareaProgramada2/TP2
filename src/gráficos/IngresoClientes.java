@@ -14,15 +14,23 @@ import javax.swing.ImageIcon;
 
 
 public class IngresoClientes extends javax.swing.JFrame {
+    /**
+     * inicializa las variables para usar más adelante para que guarden los datos
+     * variableNombre, variablecorreo, variableTipo
+     */
     private String variableNombre;
     private String variablecorreo;
     private String variableTipo;
     public baseDeDatos baseDat = new baseDeDatos();
     baseDeDatos a = new baseDeDatos();
     
+    
     public Email email= new Email();
     Persona cola = new Persona();
     public void getLogo() throws IOException{
+        /**
+         * metodo para obtener el logo y conservarlo cada vez que se entra
+         */
         a.leerFicherosNombreLogo();
         a.listaNombreLogo();
         String nombre = a.generica[0];
@@ -37,6 +45,11 @@ public class IngresoClientes extends javax.swing.JFrame {
     
     public IngresoClientes() throws IOException {
         initComponents();
+        /**
+         * cada vez que abre la ventana, estará este metodo para verificar si antes 
+         * existia algun logo
+         */
+      
         getLogo();
     }
 //frehr
@@ -224,7 +237,10 @@ public class IngresoClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistroNombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        /**
+         * acá registra el cliente y envía el correo
+         * 
+         */
         variableNombre = RegistroNombre.getText();
         variablecorreo=RegistroCorreo.getText();
         variableTipo=RegistroTipodeCliente.getText();

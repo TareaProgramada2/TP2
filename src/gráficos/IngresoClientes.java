@@ -19,7 +19,7 @@ public class IngresoClientes extends javax.swing.JFrame {
     private String variableTipo;
     public baseDeDatos baseDat = new baseDeDatos();
     baseDeDatos a = new baseDeDatos();
-    
+    String tip,cor;
     public Email email= new Email();
     Persona cola = new Persona();
     public void getLogo() throws IOException{
@@ -33,7 +33,6 @@ public class IngresoClientes extends javax.swing.JFrame {
 //        ImagenNueva.setSize(200,200);
     }
     
-
     
     public IngresoClientes() throws IOException {
         initComponents();

@@ -28,7 +28,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-//        Logo.setIcon(new ImageIcon(logo));
         Logo.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(150,150,Image.SCALE_SMOOTH)));
         NuevoNombre.setText(nombre);
     }

@@ -71,7 +71,7 @@ public class SegundaVentana extends javax.swing.JFrame {
         TXTCajeros.setRows(5);
         jScrollPane1.setViewportView(TXTCajeros);
 
-        NuevoNombre.setFont(new java.awt.Font("Leelawadee", 0, 13)); // NOI18N
+        NuevoNombre.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jButton3.setText("Mostrar tabla de clientes");

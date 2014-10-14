@@ -399,16 +399,16 @@ public class baseDeDatos
                         case 12:
                             f++;
                             break;
-                        case 1:
+                        case 13:
                             g++;
                             break;
-                        case 2:
+                        case 14:
                             h++;
                             break;
-                        case 3:
+                        case 15:
                             i++;
                             break;
-                        case 4:
+                        case 16:
                             j++;
                             break;                                                                         
                     }                                       

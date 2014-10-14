@@ -617,7 +617,7 @@ public class Graficoss extends javax.swing.JFrame {
                     
                     data.addValue(graf[8], producto10, dia1);
                     
-                    data.addValue(graf[5], producto7, dia1);
+                    data.addValue(graf[9], producto7, dia1);
                     
                     
 
@@ -638,19 +638,32 @@ public class Graficoss extends javax.swing.JFrame {
                         BarrasDia.setVisible(false);
                         Pastel.setVisible(false);
                         BarrasHora.setVisible(false);
+                        
+                        try {
+                            lista.leerFicherosHoraAtencion();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                   
+                        try {
+                            graf=lista.listaGraficosHora();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                   
                             //GRAFICO DE PASTEL  
 
                         DefaultPieDataset data =new DefaultPieDataset();
-                        data.setValue("7a.m a 8a.m", 30);
-                        data.setValue("8a.m a 9a.m", 10);
-                        data.setValue("9a.m a 10a.m", WIDTH);
-                        data.setValue("10a.m a 11a.m", 20);
-                        data.setValue("11a.m a 12m.d",15 );
-                        data.setValue("12 m.d a 1p.m", 25);
-                        data.setValue("1p.m a 2p.m", 25);
-                        data.setValue("2p.m a 3p.m", 25);
-                        data.setValue("3p.m a 4p.m", 25);
-                        data.setValue("4p.m a 5p.m", 25);
+                        data.setValue("7a.m a 8a.m", graf[0]);
+                        data.setValue("8a.m a 9a.m", graf[1]);
+                        data.setValue("9a.m a 10a.m", graf[2]);
+                        data.setValue("10a.m a 11a.m", graf[3]);
+                        data.setValue("11a.m a 12m.d",graf[4]);
+                        data.setValue("12 m.d a 1p.m",graf[5]);
+                        data.setValue("1p.m a 2p.m", graf[6]);
+                        data.setValue("2p.m a 3p.m", graf[7]);
+                        data.setValue("3p.m a 4p.m", graf[8]);
+                        data.setValue("4p.m a 5p.m", graf[9]);
 
                         chart = ChartFactory.createPieChart3D("Grafico Hora", data, true, true, false);
 

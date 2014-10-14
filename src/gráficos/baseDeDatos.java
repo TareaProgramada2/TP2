@@ -122,11 +122,14 @@ public class baseDeDatos
         }    
     }
     
-    public void lis() throws IOException
+    public int[] lis() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";
+        int[] datos= new int[31];
         int aux=0;
+        int a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31;
+        a1=a2=a3=a4=a5=a6=a7=a8=a9=a10=a11=a12=a13=a14=a15=a16=a17=a18=a19=a20=a21=a22=a23=a24=a25=a26=a27=a28=a29=a30=a31=0;
         while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
         {
             char[] arregloLinea = linea.toCharArray();
@@ -134,8 +137,133 @@ public class baseDeDatos
             for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
             {
                 
-                if(arregloLinea[ind]=='#')
+                if(arregloLinea[ind]=='/')
                 {
+                    if(linea=="1")
+                    {
+                        a1++;
+                    }
+                    else if (linea=="2")
+                    {
+                        a2++;
+                    }
+                    else if (linea=="3")
+                    {
+                        a3++;
+                    }
+                    else if (linea=="4")
+                    {
+                        a4++;
+                    }
+                    else if (linea=="5")
+                    {
+                        a5++;
+                    }
+                    else if (linea=="6")
+                    {
+                        a6++;
+                    }
+                    else if (linea=="7")
+                    {
+                        a7++;
+                    }
+                    else if (linea=="8")
+                    {
+                        a8++;
+                    }
+                    else if (linea=="9")
+                    {
+                        a9++;
+                    }
+                    else if (linea=="10")
+                    {
+                        a10++;
+                    }
+                    else if (linea=="11")
+                    {
+                        a11++;
+                    }
+                    else if (linea=="12")
+                    {
+                        a12++;
+                    }
+                    else if (linea=="13")
+                    {
+                        a13++;
+                    }
+                    else if (linea=="14")
+                    {
+                        a14++;
+                    }
+                    else if (linea=="15")
+                    {
+                        a15++;
+                    }
+                    else if (linea=="16")
+                    {
+                        a16++;
+                    }
+                    else if (linea=="17")
+                    {
+                        a17++;
+                    }
+                    else if (linea=="18")
+                    {
+                        a18++;
+                    }
+                    else if (linea=="19")
+                    {
+                        a19++;
+                    }
+                    else if (linea=="20")
+                    {
+                        a20++;
+                    }
+                    else if (linea=="21")
+                    {
+                        a21++;
+                    }
+                    else if (linea=="22")
+                    {
+                        a22++;
+                    }
+                    else if (linea=="23")
+                    {
+                        a23++;
+                    }
+                    else if (linea=="24")
+                    {
+                        a24++;
+                    }
+                    else if (linea=="25")
+                    {
+                        a25++;
+                    }
+                    else if (linea=="26")
+                    {
+                        a26++;
+                    }
+                    else if (linea=="27")
+                    {
+                        a27++;
+                    }
+                    else if (linea=="28")
+                    {
+                        a28++;
+                    }
+                    else if (linea=="29")
+                    {
+                        a29++;
+                    }
+                    else if (linea=="30")
+                    {
+                        a30++;
+                    }
+                    else if (linea=="31")
+                    {
+                        a31++;
+                    }
+                    
                     break;
                 }
                 if(arregloLinea[ind] != ',')
@@ -144,14 +272,43 @@ public class baseDeDatos
                 }
                 else
                 {
-                    this.generica[aux]=(linea);
                     linea="";
-                    aux++;
                 }    
             }
         }
         this.lectorDeFichero.close();
-            
+        datos[0]=a1;
+        datos[1]=a2;
+        datos[2]=a3;
+        datos[3]=a4;
+        datos[4]=a5;
+        datos[5]=a6;
+        datos[6]=a7;
+        datos[7]=a8;
+        datos[8]=a9;
+        datos[9]=a10;
+        datos[10]=a11;
+        datos[11]=a12;
+        datos[12]=a13;
+        datos[13]=a14;
+        datos[14]=a15;
+        datos[15]=a16;
+        datos[16]=a17;
+        datos[17]=a18;
+        datos[18]=a19;
+        datos[19]=a20;
+        datos[20]=a21;
+        datos[21]=a22;
+        datos[22]=a23;
+        datos[23]=a24;
+        datos[24]=a25;
+        datos[25]=a26;
+        datos[26]=a27;
+        datos[27]=a28;
+        datos[28]=a29;
+        datos[29]=a30;
+        datos[30]=a31;
+        return datos;
     }
     
     

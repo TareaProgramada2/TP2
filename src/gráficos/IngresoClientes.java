@@ -228,6 +228,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         variablecorreo=RegistroCorreo.getText();
         variableTipo=RegistroTipodeCliente.getText();
         String aux = variableNombre+","+variablecorreo+","+variableTipo;
+        String aux2 = variablecorreo+","+variableTipo;
         try {
             baseDat.almacenarFicherosClientes(aux);
         } catch (IOException ex) {
@@ -247,19 +248,19 @@ public class IngresoClientes extends javax.swing.JFrame {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (Integer.parseInt(variableTipo) == 1){
-            cola.entrarDiscapacitados(aux);
+            cola.entrarDiscapacitados(aux2);
         }
         else if (Integer.parseInt(variableTipo) == 2){
-            cola.entrarAdultos(aux);
+            cola.entrarAdultos(aux2);
         }
         else if (Integer.parseInt(variableTipo) == 3){
-            cola.entrarEmbarazadas(aux);
+            cola.entrarEmbarazadas(aux2);
         }
         else if (Integer.parseInt(variableTipo) == 4){
-            cola.entrarCorpotarivos(aux);
+            cola.entrarCorpotarivos(aux2);
         }
         else if (Integer.parseInt(variableTipo) == 5){
-            cola.entrarRegulares(aux);
+            cola.entrarRegulares(aux2);
         }
         System.out.println(cola.print());
     }//GEN-LAST:event_jButton1ActionPerformed

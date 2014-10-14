@@ -20,7 +20,6 @@ public class SegundaVentana extends javax.swing.JFrame {
 
     int numeroAux = 0;
     Cajero cajass = new Cajero();
-    Persona colaPriori= new Persona();
     IngresoClientes ingreso = new IngresoClientes();
     /**
      * Creates new form SegundaVentana
@@ -248,7 +247,7 @@ public class SegundaVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_liberarCajeroActionPerformed
 
     private void BotonAsignarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAsignarCajeroActionPerformed
-        String Asignacion = (String)this.colaPriori.salir();
+        String Asignacion = (String)this.ingreso.cola.salir();
         cajass.asignar(Asignacion);
         TXTCajeros.setText(cajass.getCajeros());
     }//GEN-LAST:event_BotonAsignarCajeroActionPerformed

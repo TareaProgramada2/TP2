@@ -187,21 +187,24 @@ public class Persona{
     public void entrarRegulares(Object e){
         regulares.queue(e);
     }
-    public void salir(){
+    public Object salir(){
         if(!discapacitados.vacia()){
-            discapacitados.dequeue();
+            return discapacitados.dequeue();
         }
         else if (!adultos.vacia()){
-            adultos.dequeue();
+            return adultos.dequeue();
         }
         else if (!embarazadas.vacia()){
-            embarazadas.dequeue();
+            return embarazadas.dequeue();
         }
         else if (!corporativos.vacia()){
-            corporativos.dequeue();
+            return corporativos.dequeue();
         }
         else if (!regulares.vacia()){
-            regulares.dequeue();
+            return regulares.dequeue();
+        }
+        else{
+            return "Vacio";
         }
     }
     public String print(){

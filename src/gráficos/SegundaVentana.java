@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
  */
 public class SegundaVentana extends javax.swing.JFrame {
 
+    Cajero cajass = new Cajero();
     /**
      * Creates new form SegundaVentana
      */
@@ -36,6 +37,7 @@ public class SegundaVentana extends javax.swing.JFrame {
     public SegundaVentana() throws IOException {
         initComponents();
         getLogo();
+        TXTCajeros.setText(cajass.getCajeros());
     }
 
     

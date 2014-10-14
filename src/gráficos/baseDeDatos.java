@@ -52,6 +52,12 @@ public class baseDeDatos
         this.impresorDeArchibos = null;
     }
     
+    public void leerFicherosCajas() throws FileNotFoundException, IOException
+    {        
+        this.fichero = new File ("src/base de datos/cajas.txt");
+        this.lectorDeFichero = new FileReader (this.fichero);
+    }
+    
     public void leerFicherosClientes() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/cliente.txt");
@@ -283,9 +289,11 @@ public class baseDeDatos
         return datos;
     }
     
-    public int getNumeroCajas()
+    public int getNumeroCajas() throws IOException
     {
-        return Integer.parseInt(this.generica[2]);
+        this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        String linea=almacenadorTemporalDeLectura.readLine();
+        return Integer.parseInt(linea);
     }
     
     public String getRutLogo()
@@ -475,11 +483,18 @@ public class baseDeDatos
         this.impresorDeArchibos.println( aux );
         this.escritorDeArchivos.close();
     }
-    public void almacenarnNombreyLogo(String nombre,String ruta,String numCajas) throws IOException
+    public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
     {
         this.escritorDeArchivos = new FileWriter("src/base de datos/nombreYlogo.txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        this.impresorDeArchibos.println(nombre +  "," + ruta+  ","+numCajas+",#");
+        this.impresorDeArchibos.println(nombre +  "," + ruta+",#");
         this.escritorDeArchivos.close();
-    }   
+    }
+    public void almacenarCajas(String numCajas) throws IOException
+    {
+        this.escritorDeArchivos = new FileWriter("src/base de datos/cajas.txt");
+        this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
+        this.impresorDeArchibos.println(numCajas);
+        this.escritorDeArchivos.close();
+    } 
 }

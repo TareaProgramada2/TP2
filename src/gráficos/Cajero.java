@@ -6,6 +6,8 @@
 
 package gráficos;
 
+import java.io.IOException;
+
 /**
  *
  * @author kenneth
@@ -14,14 +16,17 @@ public class Cajero {
     public String condicion;
     public String [] cajas;
     public int maxSize;
+    public baseDeDatos baseData = new baseDeDatos();
  
-    Cajero(int tamaño)
+    Cajero() throws IOException
     {
-        this.maxSize=tamaño;
+        this.baseData.leerFicherosCajas();
+        this.maxSize=this.baseData.getNumeroCajas();
         this.cajas=new String[this.maxSize];
         condicion = "vacio";
         Inicializa();
     }
+
     public void Inicializa()
     {
         for (int i=0;i<this.maxSize;i++)
@@ -63,5 +68,15 @@ public class Cajero {
     
     public String[] getCajas(){
         return this.cajas;
+    }
+    
+    public String getCajeros()
+    {
+        String linea= "";
+        for (int j=0;j<this.maxSize;j++)
+        {
+            linea= linea +"cajero"+(j+1)+"      "+cajas[j]+"\n";
+        }
+        return linea;
     }
 }

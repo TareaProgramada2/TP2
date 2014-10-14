@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.ImageIcon;
 
 /**
@@ -21,6 +22,7 @@ public class SegundaVentana extends javax.swing.JFrame {
     int numeroAux = 0;
     Cajero cajass = new Cajero();
     IngresoClientes ingreso = new IngresoClientes();
+    Email email = new Email();
     /**
      * Creates new form SegundaVentana
      */
@@ -247,9 +249,48 @@ public class SegundaVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_liberarCajeroActionPerformed
 
     private void BotonAsignarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAsignarCajeroActionPerformed
+        String [] EmailAndPrioridad = new String[3];
         String Asignacion = (String)this.ingreso.cola.salir();
         cajass.asignar(Asignacion);
         TXTCajeros.setText(cajass.getCajeros());
+        char[] arregloLinea = Asignacion.toCharArray();
+        String linea = "";
+        int aux=0;
+        for(int ind = 0; ind < arregloLinea.length ; ind++ )
+        {
+            if(arregloLinea[ind]=='#')
+            {
+                break;
+            }
+            if(arregloLinea[ind]!=',')
+            {
+                linea = linea + arregloLinea[ind] + "";
+            }
+            else
+            {
+                EmailAndPrioridad[aux]=linea;
+                linea="";
+                aux++;
+            }
+        }
+        try {
+            a.almacenarFicherosHoraAtencion(EmailAndPrioridad[1]);
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        email.cambioDePropiedadesDeCorreo();
+        try {
+            email.email(EmailAndPrioridad[0], EmailAndPrioridad[2]+"\n"+"prioridad tipo:"+EmailAndPrioridad[1]+", ya es su turno de atencion ");
+        } catch (MessagingException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            email.enviarEmail();
+        } catch (MessagingException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotonAsignarCajeroActionPerformed
 
     /**

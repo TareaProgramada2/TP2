@@ -6,6 +6,7 @@
 
 package gráficos;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +27,8 @@ public class SegundaVentana extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-        NuevaImagen.setIcon(new ImageIcon(logo));
+//        NuevaImagen.setIcon(new ImageIcon(logo));
+        NuevaImagen.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(125,125,Image.SCALE_SMOOTH)));
         NuevoNombre.setText(nombre);        
         NuevaImagen.setSize(200,200);
     }

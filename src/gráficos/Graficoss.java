@@ -1,6 +1,7 @@
 package gráficos;
 
 import gráficos.Email;
+import java.awt.Image;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -34,7 +35,8 @@ public class Graficoss extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-        ImagenIcono.setIcon(new ImageIcon(logo));
+//        ImagenIcono.setIcon(new ImageIcon(logo));
+        ImagenIcono.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(125,125,Image.SCALE_SMOOTH)));
         NuevoNombre2.setText(nombre);        
         ImagenIcono.setSize(200,200);
     }

@@ -15,7 +15,7 @@ import gráficos.SegundaVentana;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
     
-    
+    //rlekrj
 
     private FileNameExtensionFilter filter=new FileNameExtensionFilter("Archivo de imagen","jpg");
     public static String rutaimagen;

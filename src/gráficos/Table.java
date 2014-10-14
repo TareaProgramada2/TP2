@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package gráficos;
 
 /**
- *
+ * La clase Table crea una ventana que posee todos los datos de los clientes atendidos y por atender
  * @author kenneth
  */
-import gráficos.baseDeDatos.*;
 import java.awt.Dimension;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,6 +15,7 @@ public class Table extends javax.swing.JFrame {
 
     /**
      * Creates new form Table
+     * @throws java.io.IOException
      */
     public Table() throws IOException {
         initComponents();
@@ -206,7 +200,11 @@ public class Table extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
-public class Tabla extends JFrame{
+/**
+ * La clase Tabla se encuentra dentro de la clase Table. Tabla es la que le asigna todos los datos
+ * a la interfaz para que los muestre.
+ */
+    public class Tabla extends JFrame{
     baseDeDatos a = new baseDeDatos();
     TableColumn columna;
     String NombresColumnas[] = {"nombre","correo","tipo","hora","fecha"};
@@ -220,7 +218,7 @@ public class Tabla extends JFrame{
         a.listaDeDatosClientes();
         String Matriz[][]= a.getDatos();
         
-        //Crea la tabla y agrega la matriz y los nobmbres de las columnas
+        //Crea la tabla y agrega la matriz y los nombres de las columnas
         tabla.setModel(new DefaultTableModel(Matriz,NombresColumnas));
        
         //Cambia el ancho de la columna

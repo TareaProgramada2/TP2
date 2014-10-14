@@ -18,12 +18,13 @@ import javax.swing.ImageIcon;
  */
 public class SegundaVentana extends javax.swing.JFrame {
 
+    int numeroAux = 0;
     Cajero cajass = new Cajero();
+    Persona colaPriori= new Persona();
     /**
      * Creates new form SegundaVentana
      */
     baseDeDatos a = new baseDeDatos();
-    IngresoClientes ingreso = new IngresoClientes();
     public void getLogo() throws IOException{
         a.leerFicherosNombreLogo();
         a.listaNombreLogo();
@@ -48,7 +49,7 @@ public class SegundaVentana extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         BotonRegistrarCliente = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        liberarCajero = new javax.swing.JButton();
         Botongraficos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TXTCajeros = new javax.swing.JTextArea();
@@ -70,11 +71,11 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
-        jButton2.setText("Liberar cajero");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        liberarCajero.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
+        liberarCajero.setText("Liberar cajero");
+        liberarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                liberarCajeroActionPerformed(evt);
             }
         });
 
@@ -102,6 +103,11 @@ public class SegundaVentana extends javax.swing.JFrame {
         });
 
         BotonAsignarCajero.setText("Asignar cajero a cliente");
+        BotonAsignarCajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAsignarCajeroActionPerformed(evt);
+            }
+        });
 
         BtnCerrar.setText("Cerrar");
         BtnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +128,7 @@ public class SegundaVentana extends javax.swing.JFrame {
                         .addContainerGap(41, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
+                            .addComponent(liberarCajero)
                             .addComponent(BotonRegistrarCliente)
                             .addComponent(jButton3)
                             .addComponent(Botongraficos)
@@ -158,7 +164,7 @@ public class SegundaVentana extends javax.swing.JFrame {
                                 .addGap(75, 75, 75)
                                 .addComponent(BotonRegistrarCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)
+                                .addComponent(liberarCajero)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Botongraficos)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -203,6 +209,12 @@ public class SegundaVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_BotongraficosActionPerformed
 
     private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
+        IngresoClientes ingreso = null;
+        try {
+            ingreso = new IngresoClientes();
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ingreso.setVisible(true);
         
     }//GEN-LAST:event_BotonRegistrarClienteActionPerformed
@@ -223,10 +235,28 @@ public class SegundaVentana extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_BtnCerrarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void liberarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liberarCajeroActionPerformed
+        if(this.numeroAux < cajass.getCajas())
+        {
+            cajass.setCondicion(this.numeroAux);
+            this.numeroAux++;
+            TXTCajeros.setText(cajass.getCajeros());
+            
+        }
+        else
+        {
+            this.numeroAux=0;
+            cajass.setCondicion(this.numeroAux);
+            this.numeroAux++;
+            TXTCajeros.setText(cajass.getCajeros());
+        }
+    }//GEN-LAST:event_liberarCajeroActionPerformed
+
+    private void BotonAsignarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAsignarCajeroActionPerformed
+        String Asignacion = (String)this.colaPriori.salir();
+        cajass.asignar(Asignacion);
+        TXTCajeros.setText(cajass.getCajeros());
+    }//GEN-LAST:event_BotonAsignarCajeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,9 +305,9 @@ public class SegundaVentana extends javax.swing.JFrame {
     private javax.swing.JLabel NuevaImagen;
     private javax.swing.JLabel NuevoNombre;
     private javax.swing.JTextArea TXTCajeros;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton liberarCajero;
     // End of variables declaration//GEN-END:variables
 }

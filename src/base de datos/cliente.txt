@@ -1,24 +1,8 @@
 jorge,andrespato1@gmail.com,11:20,27/24/2345,4 , #
-antonio,antonio@gmail.com,2:90,27/54/3564,1,#
 dani,danisolical@hotmail.com,5,17:55,8/10/2014,#
-dani,danisolical@hotmail.com,4,19:23,8/10/2014,#
-kenneth,kennfamo@gmail.com,1,19:26,8/10/2014,#
-kenneth,kennfamo@gmail.com,1,19:26,8/10/2014,#
-Dani,danisolical@hotmail.com,4,19:25,8/10/2014,#
-dani,danisolical@hotmail.com,2,20:45,8/10/2014,#
-T_T,andrespato1@gmail.com,2,20:49,8/10/2014,#
-dani,danisolical@hotmail.com,3,21:29,8/10/2014,#
-andres,andrespato1@gmail.com,4,17:55,12/10/2014,#
-kenneth,kennfamo@gmail.com,3,18:9,12/10/2014,#
-dani,danisolical@hotmail.com,3,15:38,13/10/2014,#
-Kenneth,Fallas,5,19:33,13/10/2014,#
-Kenneth,kennfamo@gmail,5,19:33,13/10/2014,#
-jorge,andrespato1@gmail.com,4,19:47,13/10/2014,#
-Kenneth Fallas,kennfamo@gmail.com,4,21:21,13/10/2014,#
-Kenneth Fallas,kennfamo@gmail.com,2,21:23,13/10/2014,#
-Kenneth,kennfamo@hotmail.com,2,22:25,13/10/2014,#
-Kenneth,kennfamo@htmail.com,3,23:6,13/10/2014,#
 
+andres,andrespato1@gmail.com,3,2:0,14/10/2014,#
+andres,andrespato1@gmail.com,3,2:2,14/10/2014,#
 Daniela Solís,danisolical@hotmail.com,3,23:40,13/10/2014,#
 Dani,danisolical@hotmail.com,2,23:47,13/10/2014,#
 kenneth,kenfamo@hotmail.com,2,2:5,14/10/2014,#
@@ -27,3 +11,4 @@ e,kennfamo@hotmail.com,5,2:17,14/10/2014,#
 j,kennfamo@hotmail.com,2,2:33,14/10/2014,#
 r,kennfamo@gmail.com,4,2:33,14/10/2014,#
 y,andrespato1@gmail.com,4,2:33,14/10/2014,#
+h,kennfamo@gmail.com,3,2:47,14/10/2014,#

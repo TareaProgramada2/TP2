@@ -58,7 +58,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="liberarCajero" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="BotonRegistrarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Botongraficos" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -104,7 +104,7 @@
                                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                   <Component id="BotonRegistrarCliente" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="liberarCajero" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="Botongraficos" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -141,7 +141,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="liberarCajero">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Leelawadee" size="14" style="0"/>
@@ -149,7 +149,7 @@
             <Property name="text" type="java.lang.String" value="Liberar cajero"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="liberarCajeroActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Botongraficos">
@@ -205,6 +205,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Asignar cajero a cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAsignarCajeroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnCerrar">
           <Properties>

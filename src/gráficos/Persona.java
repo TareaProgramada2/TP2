@@ -204,7 +204,7 @@ public class Persona{
             return regulares.dequeue();
         }
         else{
-            return "Vacio";
+            return "vacio";
         }
     }
     public String print(){

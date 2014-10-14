@@ -704,6 +704,16 @@ public class Graficoss extends javax.swing.JFrame {
                         BarrasHora.setVisible(false);
                         PastelHora.setVisible(false);
                         Pastel.setVisible(false);
+                        try {
+                            lista.leerFicherosHoraAtencion();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        try {
+                            graf = lista.lis();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         //GRAFICO DE BARRAS
                         DefaultCategoryDataset data=new DefaultCategoryDataset();
 
@@ -750,37 +760,37 @@ public class Graficoss extends javax.swing.JFrame {
                         * en todas estas variables se almacenan los números de os días del mes
                         */
                         
-                        data.addValue(1, a, dias);
-                        data.addValue(2, b, dias);
-                        data.addValue(5, c, dias);
-                        data.addValue(2, d, dias);
-                        data.addValue(12, e, dias);
-                        data.addValue(12, f, dias);
-                        data.addValue(12, g, dias);
-                        data.addValue(12, h, dias);
-                        data.addValue(12, i, dias);
-                        data.addValue(12, j, dias);
-                        data.addValue(12, k, dias);
-                        data.addValue(12, l, dias);
-                        data.addValue(12, m, dias);
-                        data.addValue(12, n, dias);
-                        data.addValue(12, o, dias);
-                        data.addValue(12, p, dias);
-                        data.addValue(12, q, dias);
-                        data.addValue(12, r, dias);
-                        data.addValue(12, s, dias);
-                        data.addValue(12, t, dias);
-                        data.addValue(12, u, dias);
-                        data.addValue(12, v, dias);
-                        data.addValue(12, w, dias);
-                        data.addValue(12, x, dias);
-                        data.addValue(12, y, dias);
-                        data.addValue(12, z, dias);
-                        data.addValue(12, z1, dias);
-                        data.addValue(12, z2, dias);
-                        data.addValue(12, z3, dias);
-                        data.addValue(12, z4, dias);
-                        data.addValue(12, z5, dias);
+                        data.addValue(graf[0], a, dias);
+                        data.addValue(graf[1], b, dias);
+                        data.addValue(graf[2], c, dias);
+                        data.addValue(graf[3], d, dias);
+                        data.addValue(graf[4], e, dias);
+                        data.addValue(graf[5], f, dias);
+                        data.addValue(graf[6], g, dias);
+                        data.addValue(graf[7], h, dias);
+                        data.addValue(graf[8], i, dias);
+                        data.addValue(graf[9], j, dias);
+                        data.addValue(graf[10], k, dias);
+                        data.addValue(graf[11], l, dias);
+                        data.addValue(graf[12], m, dias);
+                        data.addValue(graf[13], n, dias);
+                        data.addValue(graf[14], o, dias);
+                        data.addValue(graf[15], p, dias);
+                        data.addValue(graf[16], q, dias);
+                        data.addValue(graf[17], r, dias);
+                        data.addValue(graf[18], s, dias);
+                        data.addValue(graf[19], t, dias);
+                        data.addValue(graf[20], u, dias);
+                        data.addValue(graf[21], v, dias);
+                        data.addValue(graf[22], w, dias);
+                        data.addValue(graf[23], x, dias);
+                        data.addValue(graf[24], y, dias);
+                        data.addValue(graf[25], z, dias);
+                        data.addValue(graf[26], z1, dias);
+                        data.addValue(graf[27], z2, dias);
+                        data.addValue(graf[28], z3, dias);
+                        data.addValue(graf[29], z4, dias);
+                        data.addValue(graf[30], z5, dias);
 
                         chart=ChartFactory.createBarChart("Gráfico de barras", "Dia", "", data, PlotOrientation.HORIZONTAL, true, true, true);
                         CategoryPlot plot = (CategoryPlot) chart.getPlot();
@@ -799,40 +809,50 @@ public class Graficoss extends javax.swing.JFrame {
                             BarrasDia.setVisible(false);
                             PastelHora.setVisible(false);
                             BarrasHora.setVisible(false);
+                            try {
+                                lista.leerFicherosHoraAtencion();
+                            } catch (IOException ex) {
+                                Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            try {
+                                graf = lista.lis();
                                 //GRAFICO DE PASTEL  
+                            } catch (IOException ex) {
+                                Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 
                             DefaultPieDataset data =new DefaultPieDataset();
-                            data.setValue("Día 1", 30);
-                            data.setValue("Día 2", 10);
-                            data.setValue("Día 3", 20);
-                            data.setValue("Día 4",15 );
-                            data.setValue("Día 5", 25);
-                            data.setValue("Día 6", 25);
-                            data.setValue("Día 7", 25);
-                            data.setValue("Día 8", 25);
-                            data.setValue("Día 9", 25);
-                            data.setValue("Día 10", 25);
-                            data.setValue("Día 11", 25);
-                            data.setValue("Día 12", 25);
-                            data.setValue("Día 13", 25);
-                            data.setValue("Día 14", 25);
-                            data.setValue("Día 15", 25);
-                            data.setValue("Día 16", 25);
-                            data.setValue("Día 17", 25);
-                            data.setValue("Día 18", 25);
-                            data.setValue("Día 19", 25);
-                            data.setValue("Día 20", 25);
-                            data.setValue("Día 21", 25);
-                            data.setValue("Día 22", 25);
-                            data.setValue("Día 23", 25);
-                            data.setValue("Día 24", 25);
-                            data.setValue("Día 25", 25);
-                            data.setValue("Día 26", 25);
-                            data.setValue("Día 27", 25);
-                            data.setValue("Día 28", 25);
-                            data.setValue("Día 29", 25);
-                            data.setValue("Día 30", 25);
-                            data.setValue("Día 31", 25);
+                            data.setValue("Día 1", graf[0]);
+                            data.setValue("Día 2", graf[1]);
+                            data.setValue("Día 3", graf[2]);
+                            data.setValue("Día 4", graf[3]);
+                            data.setValue("Día 5", graf[4]);
+                            data.setValue("Día 6", graf[5]);
+                            data.setValue("Día 7", graf[6]);
+                            data.setValue("Día 8", graf[7]);
+                            data.setValue("Día 9", graf[8]);
+                            data.setValue("Día 10", graf[9]);
+                            data.setValue("Día 11", graf[10]);
+                            data.setValue("Día 12", graf[11]);
+                            data.setValue("Día 13", graf[12]);
+                            data.setValue("Día 14", graf[13]);
+                            data.setValue("Día 15", graf[14]);
+                            data.setValue("Día 16", graf[15]);
+                            data.setValue("Día 17", graf[16]);
+                            data.setValue("Día 18", graf[17]);
+                            data.setValue("Día 19", graf[18]);
+                            data.setValue("Día 20", graf[19]);
+                            data.setValue("Día 21", graf[20]);
+                            data.setValue("Día 22", graf[21]);
+                            data.setValue("Día 23", graf[22]);
+                            data.setValue("Día 24", graf[23]);
+                            data.setValue("Día 25", graf[24]);
+                            data.setValue("Día 26", graf[25]);
+                            data.setValue("Día 27", graf[26]);
+                            data.setValue("Día 28", graf[27]);
+                            data.setValue("Día 29", graf[28]);
+                            data.setValue("Día 30", graf[29]);
+                            data.setValue("Día 31", graf[30]);
 
                             chart = ChartFactory.createPieChart3D("Grafico Dia", data, true, true, false);
 

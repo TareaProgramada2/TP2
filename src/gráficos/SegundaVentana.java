@@ -6,6 +6,7 @@
 
 package gráficos;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +27,8 @@ public class SegundaVentana extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-        NuevaImagen.setIcon(new ImageIcon(logo));
+//        NuevaImagen.setIcon(new ImageIcon(logo));
+        NuevaImagen.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(125,125,Image.SCALE_SMOOTH)));
         NuevoNombre.setText(nombre);        
         NuevaImagen.setSize(200,200);
     }
@@ -182,12 +184,22 @@ public class SegundaVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotongraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotongraficosActionPerformed
-        Graficoss grafico=new Graficoss();
+        Graficoss grafico = null;
+        try {
+            grafico = new Graficoss();
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
         grafico.setVisible(true);
     }//GEN-LAST:event_BotongraficosActionPerformed
 
     private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
-        IngresoClientes ingreso=new IngresoClientes();
+        IngresoClientes ingreso = null;
+        try {
+            ingreso = new IngresoClientes();
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ingreso.setVisible(true);
         
     }//GEN-LAST:event_BotonRegistrarClienteActionPerformed

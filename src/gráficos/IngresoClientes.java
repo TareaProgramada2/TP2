@@ -2,14 +2,15 @@
 
 package gráficos;
 
-import javax.swing.ImageIcon;
-import gráficos.baseDeDatos.*;
 import gráficos.Email.*;
+import gráficos.baseDeDatos.*;
+import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+import javax.swing.ImageIcon;
 
 
 public class IngresoClientes extends javax.swing.JFrame {
@@ -26,9 +27,10 @@ public class IngresoClientes extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-        ImagenNueva.setIcon(new ImageIcon(logo));
+//        ImagenNueva.setIcon(new ImageIcon(logo));
+        ImagenNueva.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(125,125,Image.SCALE_SMOOTH)));
         NuevoNombre3.setText(nombre);        
-        ImagenNueva.setSize(200,200);
+//        ImagenNueva.setSize(200,200);
     }
     
 

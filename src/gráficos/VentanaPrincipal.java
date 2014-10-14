@@ -28,7 +28,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         a.listaNombreLogo();
         String nombre = a.generica[0];
         String logo = a.generica[1];
-        Logo.setIcon(new ImageIcon(logo));
+//        Logo.setIcon(new ImageIcon(logo));
+        Logo.setIcon(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(150,150,Image.SCALE_SMOOTH)));
         NuevoNombre.setText(nombre);
     }
     
@@ -258,7 +259,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtCajerosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        SegundaVentana ventana2=new SegundaVentana();
+        SegundaVentana ventana2 = null;
+        try {
+            ventana2 = new SegundaVentana();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ventana2.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

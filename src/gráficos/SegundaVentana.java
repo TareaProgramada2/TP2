@@ -23,6 +23,7 @@ public class SegundaVentana extends javax.swing.JFrame {
      * Creates new form SegundaVentana
      */
     baseDeDatos a = new baseDeDatos();
+    IngresoClientes ingreso = new IngresoClientes();
     public void getLogo() throws IOException{
         a.leerFicherosNombreLogo();
         a.listaNombreLogo();
@@ -71,6 +72,11 @@ public class SegundaVentana extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         jButton2.setText("Liberar cajero");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         Botongraficos.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
         Botongraficos.setText("Mostrar gráficos");
@@ -197,12 +203,6 @@ public class SegundaVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_BotongraficosActionPerformed
 
     private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
-        IngresoClientes ingreso = null;
-        try {
-            ingreso = new IngresoClientes();
-        } catch (IOException ex) {
-            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
-        }
         ingreso.setVisible(true);
         
     }//GEN-LAST:event_BotonRegistrarClienteActionPerformed
@@ -222,6 +222,11 @@ public class SegundaVentana extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_BtnCerrarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

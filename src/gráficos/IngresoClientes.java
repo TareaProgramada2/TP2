@@ -262,6 +262,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         else if (Integer.parseInt(variableTipo) == 5){
             cola.entrarRegulares(aux);
         }
+        System.out.println(cola.print());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RegistroCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCorreoActionPerformed

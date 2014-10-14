@@ -332,6 +332,84 @@ public class baseDeDatos
         this.lectorDeFichero.close();
         return datos;
     }
+    public int[] listaGraficosHora() throws IOException
+    {
+        this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
+        String linea = "";
+        int aux=0;
+        int[] datos= new int[10];
+        int hora;
+        int a,b,c,d,e,f,g,h,i,j;
+        a=b=c=d=e=f=g=h=i=j=0;
+        while((linea=this.almacenadorTemporalDeLectura.readLine()) != null)
+        {
+            char[] arregloLinea = linea.toCharArray();
+            linea="";
+            
+            for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
+            {
+                
+                if(arregloLinea[ind]==':')
+                {
+                    hora=Integer.parseInt(linea);
+                    switch(hora){
+                        case 7:
+                            a++;
+                            break;
+                        case 8:
+                            b++;
+                            break;
+                        case 9:
+                            c++;
+                            break;
+                        case 10:
+                            d++;
+                            break;
+                        case 11:
+                            e++;
+                            break;
+                        case 12:
+                            f++;
+                            break;
+                        case 13:
+                            g++;
+                            break;
+                        case 14:
+                            h++;
+                            break;
+                        case 15:
+                            i++;
+                            break;
+                        case 16:
+                            j++;
+                            break;                                                                         
+                    }                                       
+                    break;
+                }
+                if(arregloLinea[ind] != ',')
+                {
+                    linea = linea + arregloLinea[ind] + "";
+                }
+                else
+                {
+                    linea="";
+                }    
+            }
+        }
+        datos[0]=a;
+        datos[1]=b;
+        datos[2]=c;
+        datos[3]=d;
+        datos[4]=e;
+        datos[5]=f;
+        datos[6]=g;
+        datos[7]=h;
+        datos[8]=i;
+        datos[9]=j;       
+        this.lectorDeFichero.close();
+        return datos;
+    
+    }
     
      public void listaDeDatosClientes() throws IOException
     {

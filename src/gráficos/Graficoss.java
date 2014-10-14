@@ -117,7 +117,7 @@ public class Graficoss extends javax.swing.JFrame {
 
         BotonGraficar.setBackground(new java.awt.Color(0, 153, 153));
         BotonGraficar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BotonGraficar.setText("Gráficar Datos");
+        BotonGraficar.setText("Graficar Datos");
         BotonGraficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGraficarActionPerformed(evt);

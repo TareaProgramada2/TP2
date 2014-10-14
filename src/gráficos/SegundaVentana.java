@@ -42,6 +42,7 @@ public class SegundaVentana extends javax.swing.JFrame {
         NuevoNombre = new javax.swing.JLabel();
         NuevaImagen = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        BotonAsignarCajero = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,8 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         });
 
+        BotonAsignarCajero.setText("Asignar cajero a cliente");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,7 +96,8 @@ public class SegundaVentana extends javax.swing.JFrame {
                             .addComponent(jButton2)
                             .addComponent(BotonRegistrarCliente)
                             .addComponent(jButton3)
-                            .addComponent(Botongraficos))
+                            .addComponent(Botongraficos)
+                            .addComponent(BotonAsignarCajero))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
@@ -121,7 +125,9 @@ public class SegundaVentana extends javax.swing.JFrame {
                             .addComponent(NuevaImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton3)
-                        .addContainerGap(158, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonAsignarCajero)
+                        .addContainerGap(126, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addContainerGap())))
@@ -203,6 +209,7 @@ public class SegundaVentana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAsignarCajero;
     private javax.swing.JButton BotonRegistrarCliente;
     private javax.swing.JButton Botongraficos;
     private javax.swing.JLabel NuevaImagen;

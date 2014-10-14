@@ -32,6 +32,9 @@ public class Email {
 	MimeMessage mensaje;
         baseDeDatos BD = new baseDeDatos(); 
 
+         /**
+        * da nuevas propierdades al web service de gmail 
+        */
 	public void cambioDePropiedadesDeCorreo() 
         {
 		String emailPort = "587";
@@ -42,7 +45,11 @@ public class Email {
 	}
         
 
-	public void email(String email, String mensaj) throws AddressException,
+        /**
+        *  rellena los datos del email para ser enviado
+        */
+
+	public void email(String email,String banco, String mensaj) throws AddressException,
 			MessagingException,
 			IOException {
                 BD.leerFicherosNombreLogo();
@@ -52,7 +59,7 @@ public class Email {
                 rut = BD.getRutLogo();
                 MimeMultipart multiParte = new MimeMultipart();
 		String[] toEmails = { email };
-		String emailSubject = "Banco";
+		String emailSubject = banco;
                 BodyPart texto = new MimeBodyPart();
                 texto.setText(mensaj+BD.getHora());
                 BodyPart adjunto = new MimeBodyPart();
@@ -77,7 +84,10 @@ public class Email {
 		
 
 	}
-
+        
+        /**
+        * segun un correo establecido se se envia el email con los atributos de los metodos anteriores 
+        */
 	public void enviarEmail() throws AddressException, MessagingException {                
 		String emailHost = "smtp.gmail.com";
 		String fromUser = "carnitasbrown";

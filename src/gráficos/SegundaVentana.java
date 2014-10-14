@@ -280,7 +280,9 @@ public class SegundaVentana extends javax.swing.JFrame {
         }
         email.cambioDePropiedadesDeCorreo();
         try {
-            email.email(EmailAndPrioridad[0], EmailAndPrioridad[2]+"\n"+"prioridad tipo:"+EmailAndPrioridad[1]+", ya es su turno de atencion ");
+            a.leerFicherosNombreLogo();
+            a.listaNombreLogo();
+            email.email(EmailAndPrioridad[0],a.getNombreEmpresa(), EmailAndPrioridad[2]+"\n"+"prioridad tipo:"+EmailAndPrioridad[1]+", ya es su turno de atencion ");
         } catch (MessagingException ex) {
             Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

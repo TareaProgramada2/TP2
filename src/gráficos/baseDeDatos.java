@@ -4,8 +4,14 @@ import java.util.*;
 import java.io.*;
 import gráficos.Matriz;
 
+ /**
+ * lee, guarda, extra informacion de los .txt 
+ */
 public class baseDeDatos 
 { 
+     /**
+    * atributos de la clase
+    */
     public BufferedReader almacenadorTemporalDeLectura;
     public File fichero;
     public FileReader lectorDeFichero;
@@ -19,7 +25,9 @@ public class baseDeDatos
     public int Mes;
     public int Año;
     String [] generica = new String [8];
-    
+     /**
+    * saca la hora de la computadora
+    */
     public String getHora()
     {
         this.Hora = this.fechaYhora.get(Calendar.HOUR_OF_DAY);
@@ -29,7 +37,9 @@ public class baseDeDatos
         hor = hor + Integer.toString(Minutos);
         return hor;
     }
-    
+     /**
+    * saca la fecha de la computadora
+    */
     public String getFecha()
     {
         this.Año = this.fechaYhora.get(Calendar.YEAR);
@@ -42,7 +52,9 @@ public class baseDeDatos
         fecha = fecha + Integer.toString(Año);
         return fecha;
     }
-    
+     /**
+    * inicializa todos los datos en null
+    */
     public baseDeDatos()
     {
         this.almacenadorTemporalDeLectura = null;
@@ -51,31 +63,41 @@ public class baseDeDatos
         this.escritorDeArchivos = null;
         this.impresorDeArchibos = null;
     }
-    
+     /**
+    * abre los ficheros de las cajas
+    */
     public void leerFicherosCajas() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/cajas.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
-    
+     /**
+    * abre los ficheros de los datos de clientes
+    */
     public void leerFicherosClientes() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/cliente.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
-    
+     /**
+    * abre el fichero de hora de atencion
+    */
     public void leerFicherosHoraAtencion() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/atendidos.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
-    
+     /**
+    * abre los ficheros del nombre y logo
+    */
     public void leerFicherosNombreLogo() throws FileNotFoundException, IOException
     {        
         this.fichero = new File ("src/base de datos/nombreYlogo.txt");
         this.lectorDeFichero = new FileReader (this.fichero);
     }
-    
+     /**
+    * almacena en un arreglo el nombre de la empresa, el logo y la ruta del logo
+    */
     public void listaNombreLogo() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
@@ -128,6 +150,9 @@ public class baseDeDatos
         }    
     }
     
+     /**
+    * crea un arreglo con los datos de todos por dia de atencion de clientes
+    */
     public int[] listaParaGraficosDias() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
@@ -288,18 +313,34 @@ public class baseDeDatos
         datos[30]=a31;
         return datos;
     }
-    
+     /**
+    * devulve el numero de cajas existentes
+    */
     public int getNumeroCajas() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea=almacenadorTemporalDeLectura.readLine();
         return Integer.parseInt(linea);
     }
+
+    /**
+    * 
+    */
+    public String getNombreEmpresa()
+    {
+        return this.generica[0];
+    }
     
+     /**
+    * retorna la ruta donde se encuentra la imagen de la empresa
+    */
     public String getRutLogo()
     {
         return this.generica[1];
     }
+     /**
+    * retorna el nombre de la imagen de la empresa
+    */
     String getLogo()
     {
         return this.generica[2];
@@ -442,7 +483,9 @@ public class baseDeDatos
         return datos;
     
     }
-    
+     /**
+    * guarda en la matriz los datos del .txt de clientes
+    */
      public void listaDeDatosClientes() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
@@ -472,17 +515,23 @@ public class baseDeDatos
         }
         this.lectorDeFichero.close();
     }
-     
+     /**
+    * devuelve la matriz con todos los datos de clientes
+    */
     public String[][] getDatos()
     {
         return this.matrizClientes.getMatriz();
     }
-    
+    /**
+    * imprimer en pantalla los valores de la matriz
+    */
     public void imprimirDatos()
     {
         this.matrizClientes.imprimir();
     }
-    
+    /**
+    * almacena en .txt todos los datos de los clientes 
+    */
     public void almacenarFicherosClientes(String dato) throws IOException
     {
         String aux="";
@@ -494,6 +543,9 @@ public class baseDeDatos
         this.escritorDeArchivos.close();
     }
     
+    /**
+    * almacena en .txt la prioridad , fecha y hora de atencion de los clientes
+    */
     public void almacenarFicherosHoraAtencion(String dato) throws IOException
     {
         String aux= dato+","+getFecha();
@@ -503,6 +555,10 @@ public class baseDeDatos
         this.impresorDeArchibos.println( aux );
         this.escritorDeArchivos.close();
     }
+    
+    /**
+    * almacena en .txt el logo y el nombre de la empresa
+    */
     public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
     {
         this.escritorDeArchivos = new FileWriter("src/base de datos/nombreYlogo.txt");
@@ -510,6 +566,10 @@ public class baseDeDatos
         this.impresorDeArchibos.println(nombre +  "," + ruta+",#");
         this.escritorDeArchivos.close();
     }
+    
+    /**
+    * guarga en un .txt el numero de cajas asignado en la interfas
+    */
     public void almacenarCajas(String numCajas) throws IOException
     {
         this.escritorDeArchivos = new FileWriter("src/base de datos/cajas.txt");

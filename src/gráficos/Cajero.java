@@ -19,6 +19,11 @@ public class Cajero {
     public int maxSize;
     public baseDeDatos baseData = new baseDeDatos();
  
+    /**
+    * se abren ficheros que lean la cantidad de cajas
+    * con la cantidad de cajas se genera un arreglo(cajeros)
+    * y se inicializa todo en vacio
+    */
     Cajero() throws IOException
     {
         this.baseData.leerFicherosCajas();
@@ -27,7 +32,10 @@ public class Cajero {
         condicion = "vacio";
         Inicializa();
     }
-
+    
+    /**
+    * hace que el arreglo en todas sus pociciones contenga un String "vacio"
+    */
     public void Inicializa()
     {
         for (int i=0;i<this.maxSize;i++)
@@ -36,6 +44,11 @@ public class Cajero {
         }
     }
     
+    /**
+    * recorre el arreglo a ver si todas las posiciones estas "ocupadas"
+    * de ser asi guarda el cliente en la pos 0 del arreglo
+    * si no se le ingresa un cliente tira un info en pantalla
+    */
     public void asignar(String cliente)
     {
         System.out.println(cliente);
@@ -62,6 +75,10 @@ public class Cajero {
         }
     }
     
+    /**
+    * pone en vacio una de las posiciones del arreglo
+    * si todas son "ocupado" lo hace de manera aleatoria
+    */
     public void setCondicion(int index)
     {
         boolean bandera = false;
@@ -89,10 +106,16 @@ public class Cajero {
         }
     }
     
+    /**
+    * devuelve el tamaño del arreglo (numero de cajas)
+    */
     public int getCajas(){
         return this.maxSize;
     }
     
+    /**
+    *devuelve un string con las cajas y las condiciones actuales de las mismas
+    */
     public String getCajeros()
     {
         String linea= "";

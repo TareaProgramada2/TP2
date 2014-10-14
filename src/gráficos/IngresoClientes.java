@@ -253,7 +253,9 @@ public class IngresoClientes extends javax.swing.JFrame {
         }
         email.cambioDePropiedadesDeCorreo();
         try {
-            email.email(variablecorreo, "Estimado cliente su registro en el banco fue a la hora: ");
+            a.leerFicherosNombreLogo();
+            a.listaNombreLogo();
+            email.email(variablecorreo,a.getNombreEmpresa(), "Estimado cliente su registro en el banco fue a la hora: ");
         } catch (MessagingException ex) {
             Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

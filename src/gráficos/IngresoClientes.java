@@ -25,9 +25,6 @@ public class IngresoClientes extends javax.swing.JFrame {
     baseDeDatos a = new baseDeDatos();
 
     
-    
-
-    String tip,cor;
 
     public Email email= new Email();
     Persona cola = new Persona();
@@ -248,7 +245,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         variablecorreo=RegistroCorreo.getText();
         variableTipo=RegistroTipodeCliente.getText();
         String aux = variableNombre+","+variablecorreo+","+variableTipo;
-        String aux2 = variablecorreo+","+variableTipo;
+        String aux2 = variablecorreo+","+variableTipo+","+variableNombre+",#";
         try {
             baseDat.almacenarFicherosClientes(aux);
         } catch (IOException ex) {

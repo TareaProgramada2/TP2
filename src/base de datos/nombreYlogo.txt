@@ -1,1 +1,1 @@
-null,/home/andres/NetBeansProjects/TP2/src/base de datos/Bleach-Wallpapers-bleach-manga-and-tv-11523378-1680-1050.jpg,#
+hola,/home/kenneth/Imágenes/10410739_778756668843958_3856464815554561058_n.jpg,#

@@ -70,6 +70,7 @@ public class Graficoss extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         NuevoNombre2 = new javax.swing.JLabel();
         ImagenIcono = new javax.swing.JLabel();
+        BtnVolver = new javax.swing.JButton();
 
         jCheckBox2.setText("Barras");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -312,6 +313,13 @@ public class Graficoss extends javax.swing.JFrame {
 
         NuevoNombre2.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
 
+        BtnVolver.setText("Volver");
+        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelPrincLayout = new javax.swing.GroupLayout(PanelPrinc);
         PanelPrinc.setLayout(PanelPrincLayout);
         PanelPrincLayout.setHorizontalGroup(
@@ -338,6 +346,10 @@ public class Graficoss extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnVolver)
+                .addContainerGap())
         );
         PanelPrincLayout.setVerticalGroup(
             PanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +378,9 @@ public class Graficoss extends javax.swing.JFrame {
                         .addComponent(BotonGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelPrincLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(capas, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnVolver)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -965,6 +979,11 @@ public class Graficoss extends javax.swing.JFrame {
         OpcionTipo.setSelected(false);
     }//GEN-LAST:event_OpcionDiaActionPerformed
 
+    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_BtnVolverActionPerformed
+
     public static void main(String args[]) throws MessagingException, IOException {
 
         
@@ -980,6 +999,7 @@ public class Graficoss extends javax.swing.JFrame {
     private javax.swing.JPanel BarrasDia;
     private javax.swing.JPanel BarrasHora;
     private javax.swing.JButton BotonGraficar;
+    private javax.swing.JButton BtnVolver;
     private javax.swing.JLabel ImagenIcono;
     private javax.swing.JLabel NuevoNombre2;
     private javax.swing.JCheckBox OpcionBarras;

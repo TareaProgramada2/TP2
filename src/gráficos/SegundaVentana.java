@@ -140,16 +140,17 @@ public class SegundaVentana extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(60, 60, 60)
+                                .addComponent(NuevaImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
                                 .addComponent(BotonRegistrarCliente)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Botongraficos))
-                            .addComponent(NuevaImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Botongraficos)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,12 +183,22 @@ public class SegundaVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotongraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotongraficosActionPerformed
-        Graficoss grafico=new Graficoss();
+        Graficoss grafico = null;
+        try {
+            grafico = new Graficoss();
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
         grafico.setVisible(true);
     }//GEN-LAST:event_BotongraficosActionPerformed
 
     private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
-        IngresoClientes ingreso=new IngresoClientes();
+        IngresoClientes ingreso = null;
+        try {
+            ingreso = new IngresoClientes();
+        } catch (IOException ex) {
+            Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ingreso.setVisible(true);
         
     }//GEN-LAST:event_BotonRegistrarClienteActionPerformed

@@ -17,18 +17,25 @@ public class IngresoClientes extends javax.swing.JFrame {
     private String variablecorreo;
     private String variableTipo;
     public baseDeDatos baseDat = new baseDeDatos();
+    baseDeDatos a = new baseDeDatos();
     
     public Email email= new Email();
     Persona cola = new Persona();
+    public void getLogo() throws IOException{
+        a.leerFicherosNombreLogo();
+        a.listaNombreLogo();
+        String nombre = a.generica[0];
+        String logo = a.generica[1];
+        ImagenNueva.setIcon(new ImageIcon(logo));
+        NuevoNombre3.setText(nombre);        
+        ImagenNueva.setSize(200,200);
+    }
     
 
     
-    public IngresoClientes() {
+    public IngresoClientes() throws IOException {
         initComponents();
-        NuevoNombre3.setText(VentanaPrincipal.variable2);
-        ImagenNueva.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
-        ImagenNueva.setSize(200,200);
-        this.setVisible(true);
+        getLogo();
     }
 //frehr
     
@@ -298,7 +305,11 @@ public class IngresoClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IngresoClientes().setVisible(true);
+                try {
+                    new IngresoClientes().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(IngresoClientes.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

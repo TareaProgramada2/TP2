@@ -139,131 +139,103 @@ public class baseDeDatos
                 
                 if(arregloLinea[ind]=='/')
                 {
-                    if(linea=="1")
+                    int dia=Integer.parseInt(linea);
+                    switch(dia)
                     {
-                        a1++;
+                        case 1:
+                            a1++;
+                            break;
+                        case 2:
+                            a2++;
+                            break;
+                        case 3:
+                            a3++;
+                            break;
+                        case 4:
+                            a4++;
+                            break;
+                        case 5:
+                            a5++;
+                            break;
+                        case 6:
+                            a6++;
+                            break;
+                        case 7:
+                            a7++;
+                            break;
+                        case 8:
+                            a8++;
+                            break;
+                        case 9:
+                            a9++;
+                            break;
+                        case 10:
+                            a10++;
+                            break;
+                        case 11:
+                            a11++;
+                            break;
+                        case 12:
+                            a12++;
+                            break;
+                        case 13:
+                            a13++;
+                            break;
+                        case 14:
+                            a14++;
+                            break;
+                        case 15:
+                            a15++;
+                            break;
+                        case 16:
+                            a16++;
+                            break;
+                        case 17:
+                            a17++;
+                            break;
+                        case 18:
+                            a18++;
+                            break;
+                        case 19:
+                            a19++;
+                            break;
+                        case 20:
+                            a20++;
+                            break;
+                        case 21:
+                            a21++;
+                            break;
+                        case 22:
+                            a22++;
+                            break;
+                        case 23:
+                            a23++;
+                            break;
+                        case 24:
+                            a24++;
+                            break;
+                        case 25:
+                            a25++;
+                            break;
+                        case 26:
+                            a26++;
+                            break;
+                        case 27:
+                            a27++;
+                            break;
+                        case 28:
+                            a28++;
+                            break;
+                        case 29:
+                            a29++;
+                            break;
+                        case 30:
+                            a30++;
+                            break;
+                        case 31:
+                            a31++;
+                            break;
                     }
-                    else if (linea=="2")
-                    {
-                        a2++;
-                    }
-                    else if (linea=="3")
-                    {
-                        a3++;
-                    }
-                    else if (linea=="4")
-                    {
-                        a4++;
-                    }
-                    else if (linea=="5")
-                    {
-                        a5++;
-                    }
-                    else if (linea=="6")
-                    {
-                        a6++;
-                    }
-                    else if (linea=="7")
-                    {
-                        a7++;
-                    }
-                    else if (linea=="8")
-                    {
-                        a8++;
-                    }
-                    else if (linea=="9")
-                    {
-                        a9++;
-                    }
-                    else if (linea=="10")
-                    {
-                        a10++;
-                    }
-                    else if (linea=="11")
-                    {
-                        a11++;
-                    }
-                    else if (linea=="12")
-                    {
-                        a12++;
-                    }
-                    else if (linea=="13")
-                    {
-                        a13++;
-                    }
-                    else if (linea=="14")
-                    {
-                        a14++;
-                    }
-                    else if (linea=="15")
-                    {
-                        a15++;
-                    }
-                    else if (linea=="16")
-                    {
-                        a16++;
-                    }
-                    else if (linea=="17")
-                    {
-                        a17++;
-                    }
-                    else if (linea=="18")
-                    {
-                        a18++;
-                    }
-                    else if (linea=="19")
-                    {
-                        a19++;
-                    }
-                    else if (linea=="20")
-                    {
-                        a20++;
-                    }
-                    else if (linea=="21")
-                    {
-                        a21++;
-                    }
-                    else if (linea=="22")
-                    {
-                        a22++;
-                    }
-                    else if (linea=="23")
-                    {
-                        a23++;
-                    }
-                    else if (linea=="24")
-                    {
-                        a24++;
-                    }
-                    else if (linea=="25")
-                    {
-                        a25++;
-                    }
-                    else if (linea=="26")
-                    {
-                        a26++;
-                    }
-                    else if (linea=="27")
-                    {
-                        a27++;
-                    }
-                    else if (linea=="28")
-                    {
-                        a28++;
-                    }
-                    else if (linea=="29")
-                    {
-                        a29++;
-                    }
-                    else if (linea=="30")
-                    {
-                        a30++;
-                    }
-                    else if (linea=="31")
-                    {
-                        a31++;
-                    }
-                    
                     break;
                 }
                 if(arregloLinea[ind] != ',')

@@ -49,7 +49,7 @@ public class Email {
                 rut = BD.getRutLogo();
                 MimeMultipart multiParte = new MimeMultipart();
 		String[] toEmails = { email };
-		String emailSubject = "Bank";
+		String emailSubject = "Banco";
                 BodyPart texto = new MimeBodyPart();
                 texto.setText(mensaj+BD.getHora());
                 BodyPart adjunto = new MimeBodyPart();

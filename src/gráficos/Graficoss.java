@@ -710,7 +710,7 @@ public class Graficoss extends javax.swing.JFrame {
                             Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         try {
-                            graf = lista.lis();
+                            graf = lista.listaParaGraficosDias();
                         } catch (IOException ex) {
                             Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -815,7 +815,7 @@ public class Graficoss extends javax.swing.JFrame {
                                 Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                             }
                             try {
-                                graf = lista.lis();
+                                graf = lista.listaParaGraficosDias();
                                 //GRAFICO DE PASTEL  
                             } catch (IOException ex) {
                                 Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);

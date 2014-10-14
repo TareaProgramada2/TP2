@@ -23,10 +23,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     baseDeDatos a = new baseDeDatos();
     public int cajeros;
     
-    public String getLogo() throws IOException{
+    public void getLogo() throws IOException{
         a.leerFicherosNombreLogo();
         a.listaNombreLogo();
-        return a.generica[2];
+        String nombre = a.generica[0];
+        String logo = a.generica[1];
+        Logo.setIcon(new ImageIcon(logo));
+        NuevoNombre.setText(nombre);
     }
     
     
@@ -219,7 +222,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
             try{
-                a.almacenarnNombreyLogo(variable2, rutaimagen);
+                a.almacenarnNombreyLogo(variable2, rutaimagen,TxtCajeros.getText());
                 
             }catch(IOException e){
                 System.err.println("No se creo el archivo");
@@ -279,11 +282,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 VentanaPrincipal f = new VentanaPrincipal();
-                String r;
                 try{
-                    r = f.getLogo();
-                    new SegundaVentana().setVisible(true);
-                    f.setVisible(false);
+                    f.getLogo();
+                    f.setVisible(true);
                 }
                 catch(NullPointerException ex){
                     f.setVisible(true);

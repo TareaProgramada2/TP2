@@ -122,7 +122,7 @@ public class baseDeDatos
         }    
     }
     
-    public int[] lis() throws IOException
+    public int[] listaParaGraficosDias() throws IOException
     {
         this.almacenadorTemporalDeLectura = new BufferedReader(this.lectorDeFichero);
         String linea = "";
@@ -283,6 +283,10 @@ public class baseDeDatos
         return datos;
     }
     
+    public int getNumeroCajas()
+    {
+        return Integer.parseInt(this.generica[2]);
+    }
     
     public String getRutLogo()
     {
@@ -471,11 +475,11 @@ public class baseDeDatos
         this.impresorDeArchibos.println( aux );
         this.escritorDeArchivos.close();
     }
-    public void almacenarnNombreyLogo(String nombre,String ruta) throws IOException
+    public void almacenarnNombreyLogo(String nombre,String ruta,String numCajas) throws IOException
     {
         this.escritorDeArchivos = new FileWriter("src/base de datos/nombreYlogo.txt");
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
-        this.impresorDeArchibos.println(nombre +  "," + ruta+  ",#");
+        this.impresorDeArchibos.println(nombre +  "," + ruta+  ","+numCajas+",#");
         this.escritorDeArchivos.close();
     }   
 }

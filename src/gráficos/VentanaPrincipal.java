@@ -201,7 +201,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
             try{
-                a.almacenarnNombreyLogo(variable2, rutaimagen);
+                a.almacenarnNombreyLogo(variable2, rutaimagen,TxtCajeros.getText());
                 
             }catch(IOException e){
                 System.err.println("No se creo el archivo");

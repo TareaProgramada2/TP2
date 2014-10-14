@@ -20,12 +20,20 @@ public class SegundaVentana extends javax.swing.JFrame {
     /**
      * Creates new form SegundaVentana
      */
-    public SegundaVentana() {
-        initComponents();
-        NuevoNombre.setText(VentanaPrincipal.variable2);
-        NuevaImagen.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
+    baseDeDatos a = new baseDeDatos();
+    public void getLogo() throws IOException{
+        a.leerFicherosNombreLogo();
+        a.listaNombreLogo();
+        String nombre = a.generica[0];
+        String logo = a.generica[1];
+        NuevaImagen.setIcon(new ImageIcon(logo));
+        NuevoNombre.setText(nombre);        
         NuevaImagen.setSize(200,200);
-        this.setVisible(true);
+    }
+    
+    public SegundaVentana() throws IOException {
+        initComponents();
+        getLogo();
     }
 
     
@@ -230,7 +238,11 @@ public class SegundaVentana extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SegundaVentana().setVisible(true);
+                try {
+                    new SegundaVentana().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

@@ -27,18 +27,24 @@ import org.jfree.data.xy.*;
 public class Graficoss extends javax.swing.JFrame {
 
     Email email = new Email();
+    baseDeDatos a = new baseDeDatos();
+    
+    public void getLogo() throws IOException{
+        a.leerFicherosNombreLogo();
+        a.listaNombreLogo();
+        String nombre = a.generica[0];
+        String logo = a.generica[1];
+        ImagenIcono.setIcon(new ImageIcon(logo));
+        NuevoNombre2.setText(nombre);        
+        ImagenIcono.setSize(200,200);
+    }
 
-    public Graficoss() {
+    public Graficoss() throws IOException {
         initComponents();
         this.setLocationRelativeTo(this);//Ubica el panel
         this.Pastel.setVisible(false);//Hace visible el panel donde estará el grafico pastel
         this.Barras.setVisible(false);//Hace visible el panel donde estará el grafico de barras
-        NuevoNombre2.setText(VentanaPrincipal.variable2);//define el nombre
-        ImagenIcono.setIcon(new ImageIcon(VentanaPrincipal.rutaimagen));
-        ImagenIcono.setSize(200,200);
-
-        this.setVisible(true);
-       
+        getLogo();
     }
 
     public void correo() throws MessagingException {
@@ -989,7 +995,11 @@ public class Graficoss extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Graficoss().setVisible(true);
+                try {
+                    new Graficoss().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

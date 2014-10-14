@@ -20,7 +20,6 @@ import org.jfree.data.xy.*;
 
 
 
-//jdsdjs
 
 
 
@@ -39,6 +38,7 @@ public class Graficoss extends javax.swing.JFrame {
         ImagenIcono.setSize(200,200);
 
         this.setVisible(true);
+       
     }
 
     public void correo() throws MessagingException {
@@ -174,7 +174,7 @@ public class Graficoss extends javax.swing.JFrame {
         Barras.setLayout(BarrasLayout);
         BarrasLayout.setHorizontalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+            .addGap(0, 879, Short.MAX_VALUE)
         );
         BarrasLayout.setVerticalGroup(
             BarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +214,7 @@ public class Graficoss extends javax.swing.JFrame {
         capasLayout.setHorizontalGroup(
             capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capasLayout.createSequentialGroup()
-                .addGap(0, 40, Short.MAX_VALUE)
+                .addGap(0, 22, Short.MAX_VALUE)
                 .addComponent(Barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(capasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(capasLayout.createSequentialGroup()
@@ -395,11 +395,25 @@ public class Graficoss extends javax.swing.JFrame {
     private void BotonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGraficarActionPerformed
         ChartPanel panel;
         baseDeDatos lista = new baseDeDatos();
+        /**
+         * llama a la base de datos para poder acceder a los datos necesarios para los gráficos
+         */
         int [] graf = new int[31];
 
         JFreeChart chart=null;
+        /**
+         * empieza a pregunta por las opciones que el usuario eligió y depediendo de eso hace visible el panel en donde esta el gráfico deseado
+         * en este caso es por la cantidad de clientes por tipo
+         */
         if (OpcionTipo.isSelected()){
             if (OpciondeBarras.isSelected()) {
+                Barras.setVisible(true);
+                Pastel.setVisible(false);
+                PastelDia.setVisible(false);
+                BarrasDia.setVisible(false);
+                PastelHora.setVisible(false);
+                BarrasHora.setVisible(false);
+                
                 //GRAFICO DE BARRAS
                 try {
                     lista.leerFicherosHoraAtencion();
@@ -412,6 +426,9 @@ public class Graficoss extends javax.swing.JFrame {
                     Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 DefaultCategoryDataset data = new DefaultCategoryDataset();
+                /**
+                 * Acá empieza a guardar los datos y hacer las variaciones
+                 */
 
                 String producto1 = "Persona con discapacidad";
                 String producto2 = "Adulto mayor";
@@ -443,7 +460,21 @@ public class Graficoss extends javax.swing.JFrame {
 
         
         else {
+                /**
+                 * este es en el caso del gráfico pastel
+                 */
                 if (OpciondePastel.isSelected()) {
+
+
+
+                    Pastel.setVisible(true);
+                    Barras.setVisible(false);
+                    PastelDia.setVisible(false);
+                    BarrasDia.setVisible(false);
+                    PastelHora.setVisible(false);
+                    BarrasHora.setVisible(false);
+                    //GRAFICO DE PASTEL  
+
                     try {
                         //GRAFICO DE PASTEL
                         lista.leerFicherosHoraAtencion();
@@ -456,6 +487,33 @@ public class Graficoss extends javax.swing.JFrame {
                         Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
+
+
+                    try {
+                        //GRAFICO DE PASTEL
+                        lista.leerFicherosHoraAtencion();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        graf= lista.listaParaGraficosPorPrioridad();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+
+                    try {
+                        //GRAFICO DE PASTEL
+                        lista.leerFicherosHoraAtencion();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        graf= lista.listaParaGraficosPorPrioridad();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Graficoss.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
                     DefaultPieDataset data = new DefaultPieDataset();
                     data.setValue("Persona con discapacidad", graf[0]);
                     data.setValue("Adulto mayor", graf[1]);
@@ -476,7 +534,11 @@ public class Graficoss extends javax.swing.JFrame {
 
             
         panel = new ChartPanel(chart);
+        /**
+         * le da tamaño a los gráficos
+         */
         panel.setBounds(5, 10, 410, 350);
+        
         
         if(OpciondePastel.isSelected()){
                     Pastel.add(panel);
@@ -493,8 +555,18 @@ public class Graficoss extends javax.swing.JFrame {
         }    
         }
         else{
+            /**
+             * acá es en caso de que se eliga la opción de la hora
+             * de igual forma pregunta cual opción esta seleccioanda o pastel o barras
+             */
             if(OpcionHora.isSelected()){
                 if (OpciondeBarras.isSelected()){
+                    BarrasHora.setVisible(true);
+                    Barras.setVisible(false);
+                    PastelDia.setVisible(false);
+                    BarrasDia.setVisible(false);
+                    PastelHora.setVisible(false);
+                    Pastel.setVisible(false);
                     //GRAFICO DE BARRAS
                     DefaultCategoryDataset data=new DefaultCategoryDataset();
                     String producto1 = "7 a.m a 8 a.m";
@@ -535,6 +607,12 @@ public class Graficoss extends javax.swing.JFrame {
                 }
                 else{
                     if (OpciondePastel.isSelected()){
+                        PastelHora.setVisible(true);
+                        Barras.setVisible(false);
+                        PastelDia.setVisible(false);
+                        BarrasDia.setVisible(false);
+                        Pastel.setVisible(false);
+                        BarrasHora.setVisible(false);
                             //GRAFICO DE PASTEL  
 
                         DefaultPieDataset data =new DefaultPieDataset();
@@ -575,8 +653,17 @@ public class Graficoss extends javax.swing.JFrame {
 
             }
             else{
+                /**
+                 * esta opción es en caso de que se desee ver el grafico de los dias
+                 */
                 if(OpcionDia.isSelected()){
                     if (OpciondeBarras.isSelected()){
+                        BarrasDia.setVisible(true);
+                        Barras.setVisible(false);
+                        PastelDia.setVisible(false);
+                        BarrasHora.setVisible(false);
+                        PastelHora.setVisible(false);
+                        Pastel.setVisible(false);
                         //GRAFICO DE BARRAS
                         DefaultCategoryDataset data=new DefaultCategoryDataset();
 
@@ -619,7 +706,9 @@ public class Graficoss extends javax.swing.JFrame {
                         String dias ="Días";
                         
 
-
+                        /**
+                        * en todas estas variables se almacenan los números de os días del mes
+                        */
                         
                         data.addValue(1, a, dias);
                         data.addValue(2, b, dias);
@@ -664,6 +753,12 @@ public class Graficoss extends javax.swing.JFrame {
                     }
                     else{
                         if (OpciondePastel.isSelected()){
+                            PastelDia.setVisible(true);
+                            Barras.setVisible(false);
+                            Pastel.setVisible(false);
+                            BarrasDia.setVisible(false);
+                            PastelHora.setVisible(false);
+                            BarrasHora.setVisible(false);
                                 //GRAFICO DE PASTEL  
 
                             DefaultPieDataset data =new DefaultPieDataset();
@@ -744,7 +839,9 @@ public class Graficoss extends javax.swing.JFrame {
     }//GEN-LAST:event_OpcionBarrasActionPerformed
 
     private void OpciondeBarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpciondeBarrasActionPerformed
-
+        /**
+         * esta opción no permite que se tengan seleccionadas dos opciones al mismo tiempo.
+         */
         if (OpcionHora.isSelected()){
             BarrasHora.setVisible(true);
         }
@@ -769,7 +866,9 @@ public class Graficoss extends javax.swing.JFrame {
     }//GEN-LAST:event_OpciondeBarrasActionPerformed
 
     private void OpciondePastelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpciondePastelActionPerformed
-
+        /**
+         * esta opción no permite que se tengan seleccionadas dos opciones al mismo tiempo.
+         */
         if (OpcionHora.isSelected()){
             PastelHora.setVisible(true);
         }
@@ -785,7 +884,10 @@ public class Graficoss extends javax.swing.JFrame {
         OpciondeBarras.setSelected(false);
 
     }//GEN-LAST:event_OpciondePastelActionPerformed
-
+    /**
+     * todas estas opciones son para que solo se pueda seleccionar una a la vez
+     * @param evt 
+     */
     private void OpcionTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionTipoActionPerformed
         OpcionHora.setSelected(false);
         OpcionDia.setSelected(false);
@@ -837,4 +939,4 @@ public class Graficoss extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
-//eklderfdlosdisjdsdsjcdsjfskjd
+

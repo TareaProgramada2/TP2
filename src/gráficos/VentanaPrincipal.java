@@ -10,6 +10,7 @@ import gráficos.baseDeDatos;
 import gráficos.Email;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import gráficos.SegundaVentana;
 //ejkrjf
 //dhjshdjhs
 

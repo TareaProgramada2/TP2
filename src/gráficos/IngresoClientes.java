@@ -23,8 +23,12 @@ public class IngresoClientes extends javax.swing.JFrame {
     private String variableTipo;
     public baseDeDatos baseDat = new baseDeDatos();
     baseDeDatos a = new baseDeDatos();
+
     
     
+
+    String tip,cor;
+
     public Email email= new Email();
     Persona cola = new Persona();
     public void getLogo() throws IOException{
@@ -41,7 +45,6 @@ public class IngresoClientes extends javax.swing.JFrame {
 //        ImagenNueva.setSize(200,200);
     }
     
-
     
     public IngresoClientes() throws IOException {
         initComponents();
@@ -278,6 +281,7 @@ public class IngresoClientes extends javax.swing.JFrame {
         else if (Integer.parseInt(variableTipo) == 5){
             cola.entrarRegulares(aux);
         }
+        System.out.println(cola.print());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RegistroCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCorreoActionPerformed

@@ -7,6 +7,7 @@
 package gráficos;
 
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,40 +35,62 @@ public class Cajero {
             this.cajas[i]=this.condicion;
         }
     }
-    public void setCondicion(String cliente)
+    
+    public void asignar(String cliente)
     {
+        System.out.println(cliente);
+        boolean bandera = false;
         if (cliente!="vacio")
         {
-            boolean bandera = false;
-            for (int i=0;i<this.maxSize && bandera!=true;i++)
+            for (int i=0; i< maxSize && bandera != true ;i++)
             {
-                if(this.cajas[i]=="vacio")
+                if(cajas[i]=="vacio")
                 {
                     cajas[i]="ocupado";
-                    bandera =true;
+                    bandera = true;
                 }
             }
-            if (bandera==false)
+            if (bandera == false)
             {
-                cajas[0]="vacio";
-            }
+                setCondicion(0);
+                asignar(cliente);
+            }            
         }
         else
         {
-            boolean bandera = false;
-            for (int i=0;i<this.maxSize && bandera!=true;i++)
-            {
-                if(this.cajas[i]=="ocupado")
-                {
-                    cajas[i]="vacio";
-                    bandera =true;
-                }
-            }
+            JOptionPane.showMessageDialog(null, "no quedan clientes en la cola", "Atención", 1 );
         }
     }
     
-    public String[] getCajas(){
-        return this.cajas;
+    public void setCondicion(int index)
+    {
+        boolean bandera = false;
+        for (int i=0; i< maxSize && bandera!=true;i++)
+        {
+            if(cajas[i]!="ocupado")
+            {
+                bandera = true;
+            }
+        }
+        if (bandera == true)
+        {
+            for (int i=0; i< maxSize && bandera!=false;i++)
+            {
+                if(cajas[i]=="ocupado")
+                {
+                    cajas[i]="vacio";
+                    bandera = false;
+                }
+            }            
+        }
+        else
+        {
+            cajas[index]="vacio";
+        }
+    }
+    
+    public int getCajas(){
+        return this.maxSize;
     }
     
     public String getCajeros()
@@ -79,4 +102,6 @@ public class Cajero {
         }
         return linea;
     }
+
+    
 }

@@ -79,7 +79,7 @@ public class baseDeDatos
         {
             char[] arregloLinea = linea.toCharArray();
             linea="";
-            for(int ind = 0; ind < arregloLinea.length +1 ; ind++ )
+            for(int ind = 0; ind < arregloLinea.length - 1 ; ind++ )
             {
                 
                 if(arregloLinea[ind]=='#')

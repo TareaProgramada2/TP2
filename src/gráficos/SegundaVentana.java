@@ -274,7 +274,9 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         }
         try {
+            
             a.almacenarFicherosHoraAtencion(EmailAndPrioridad[1]);
+            
         } catch (IOException ex) {
             Logger.getLogger(SegundaVentana.class.getName()).log(Level.SEVERE, null, ex);
         }

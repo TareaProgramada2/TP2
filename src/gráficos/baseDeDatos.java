@@ -546,14 +546,18 @@ public class baseDeDatos
     /**
     * almacena en .txt la prioridad , fecha y hora de atencion de los clientes
     */
-    public void almacenarFicherosHoraAtencion(String dato) throws IOException
+    public void almacenarFicherosHoraAtencion(String dato1) throws IOException
     {
-        String aux= dato+","+getFecha();
+        int dato = Integer.parseInt(dato1);
+        if (dato==1||dato==3||dato==4||dato==2||dato==5)
+        {
+        String aux= dato1+","+getFecha();
         aux= aux+","+getHora()+",#";
         this.escritorDeArchivos = new FileWriter("src/base de datos/atendidos.txt",true);
         this.impresorDeArchibos = new PrintWriter(this.escritorDeArchivos);
         this.impresorDeArchibos.println( aux );
         this.escritorDeArchivos.close();
+        }
     }
     
     /**
